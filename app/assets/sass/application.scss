@@ -19,3 +19,23 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.dashboard-tags {
+  text-transform: lowercase;
+}
+
+.dashboard-tags::first-letter {
+  text-transform: capitalize;
+}
+
+.overview-border {
+  height: 4px;
+  background: #1E6FB8;
+  border: none;
+}
+
+.section-border {
+  height: 3px;
+  background: #b1b4b6;
+  border: none;
+}
