@@ -6,12 +6,19 @@
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "Alpha"
-  },
-  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
-}) }}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -24,7 +31,26 @@
         <div class="govuk-grid-column-two-thirds">
           <hr class="overview-border">
 
-PROGRESS BAR
+          <div class="hmcts-progress-bar-vertical" role="progressbar">
+            <ol class="hmcts-progress-bar__list">
+              <li class="hmcts-progress-bar__list-item">
+                <span class="hmcts-progress-bar__icon hmcts-progress-bar__icon--complete"></span>
+                <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Current Step 1: </span>Application submitted</span>
+              </li>
+              <li class="hmcts-progress-bar__list-item">
+                <span class="hmcts-progress-bar__icon"></span>
+                <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Step 2: </span>Hearings</span>
+              </li>
+              <li class="hmcts-progress-bar__list-item">
+                <span class="hmcts-progress-bar__icon"></span>
+                <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Step 3: </span>Orders &amp; hearings outcome</span>
+              </li>
+              <li class="hmcts-progress-bar__list-item">
+                <span class="hmcts-progress-bar__icon"></span>
+                <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Step 4: </span>Case closed</span>
+              </li>
+            </ol>
+          </div>
 
           <!-- Main body -->
 
@@ -36,7 +62,7 @@ PROGRESS BAR
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="View and edit your personal details">
+                    <a class="govuk-link--no-visited-state" class="govuk-link--no-visited-state" href="#" aria-describedby="View and edit your personal details">
                       View and edit your personal details
                     </a>
                   </span>
@@ -51,7 +77,7 @@ PROGRESS BAR
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="Your ET1 claim form">
+                    <a class="govuk-link--no-visited-state" href="#" aria-describedby="Your ET1 claim form">
                       Your ET1 claim form
                     </a>
                   </span>
@@ -59,7 +85,7 @@ PROGRESS BAR
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="Acknowledgment of claim letter">
+                    <a class="govuk-link--no-visited-state" href="#" aria-describedby="Acknowledgment of claim letter">
                       Acknowledgment of claim letter
                     </a>
                   </span>
@@ -74,7 +100,7 @@ PROGRESS BAR
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="Response from the respondent (ET3)">
+                    <a class="govuk-link--no-visited-state" href="#" aria-describedby="Response from the respondent (ET3)">
                       Response from the respondent (ET3)
                     </a>
                   </span>
@@ -95,14 +121,6 @@ PROGRESS BAR
                     </a>
                   </span>
                   <strong class="govuk-tag app-task-list__tag govuk-tag--grey dashboard-tags" id="eligibility-status">Not available yet</strong>
-                </li>
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                    <a style="pointer-events: none; text-decoration: none" aria-describedby="Submit hearing agenda">
-                      Submit hearing agenda
-                    </a>
-                  </span>
-                  <strong class="govuk-tag app-task-list__tag govuk-tag--grey dashboard-tags" id="eligibility-status">Cannot start yet</strong>
                 </li>
               </ul>
             </li>
@@ -130,7 +148,7 @@ PROGRESS BAR
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="Contact the tribunal about your case">
+                    <a class="govuk-link--no-visited-state" href="#" aria-describedby="Contact the tribunal about your case">
                       Contact the tribunal about your case
                     </a>
                   </span>
@@ -180,7 +198,7 @@ PROGRESS BAR
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="      All documents">
+                    <a class="govuk-link--no-visited-state" href="#" aria-describedby="      All documents">
                       All documents
                     </a>
                   </span>
@@ -198,9 +216,9 @@ PROGRESS BAR
             <hr class="overview-border">
             <h2 class="govuk-heading-s govuk-!-margin-top-4">I want to...</h2>
               <p class="govuk-body">
-                <a href="#">Contact the tribunal about my case</a><br><br>
-                <a href="#">Find legal advice</a><br><br>
-                <a href="#">Help with tribunal terms</a><br><br>
+                <a class="govuk-link--no-visited-state" href="#">Contact the tribunal about my case</a><br><br>
+                <a class="govuk-link--no-visited-state" href="#">Find legal advice</a><br><br>
+                <a class="govuk-link--no-visited-state" href="#">Help with tribunal terms</a><br><br>
               </p>
 
             <details class="govuk-details" data-module="govuk-details">
@@ -212,7 +230,7 @@ PROGRESS BAR
               <div class="govuk-details__text">
                 Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
                 <br><br>
-                If you want to help processing case updates,<a href="#"> contact the tribunal directly</a>.
+                If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="#"> contact the tribunal directly</a>.
                 <br><br>
                 <b>England & Wales</b>
                 Telephone: 0300 123 1024
@@ -228,7 +246,7 @@ PROGRESS BAR
                 Monday to Thursday, 8.30am to 5pm.
                 Friday, 8.30am to 4pm.
                 The centre does not open on bank holidays.
-                Find out about call charges (opens in new tab)
+                <a class="govuk-link--no-visited-state" href="#">Find out about call charges (opens in new tab)</a>
               </div>
             </details>
           </div>
