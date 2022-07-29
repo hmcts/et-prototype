@@ -12,6 +12,7 @@
     "serve": "node listen-on-port"
   },
   "dependencies": {
+    "@hmcts/frontend": "^0.0.50-alpha",
     "acorn": "^8.5.0",
     "ansi-colors": "^4.1.1",
     "body-parser": "^1.14.1",

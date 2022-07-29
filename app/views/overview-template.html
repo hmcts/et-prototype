@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block beforeContent %}
+<div class="govuk-width-container">
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
     <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -19,40 +20,46 @@
     </span>
   </p>
 </div>
+
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Case overview - Pablo Jimenez v Redde Ltd</h1>
+      </div>
 {% endblock %}
 
 {% block content %}
       <!-- Heading and progress bar -->
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <h1 class="govuk-heading-xl" style="margin-bottom: 2px;">Case overview - Pablo Jimenez v Redde Ltd</h1>
-          <p class="govuk-body">Case number 123456/2022</p>
-        </div>
-        <div class="govuk-grid-column-two-thirds">
-          <hr class="overview-border">
 
-          <div class="hmcts-progress-bar-vertical" role="progressbar">
-            <ol class="hmcts-progress-bar__list">
-              <li class="hmcts-progress-bar__list-item">
-                <span class="hmcts-progress-bar__icon hmcts-progress-bar__icon--complete"></span>
-                <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Current Step 1: </span>Application submitted</span>
-              </li>
-              <li class="hmcts-progress-bar__list-item">
-                <span class="hmcts-progress-bar__icon"></span>
-                <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Step 2: </span>Hearings</span>
-              </li>
-              <li class="hmcts-progress-bar__list-item">
-                <span class="hmcts-progress-bar__icon"></span>
-                <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Step 3: </span>Orders &amp; hearings outcome</span>
-              </li>
-              <li class="hmcts-progress-bar__list-item">
-                <span class="hmcts-progress-bar__icon"></span>
-                <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Step 4: </span>Case closed</span>
-              </li>
-            </ol>
-          </div>
 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
           <!-- Main body -->
+          <div class="hmcts-progress-bar-vertical" role="progressbar">
+          <ol class="hmcts-progress-bar__list">
+
+          <li class="hmcts-progress-bar__list-item">
+            <span class="hmcts-progress-bar__icon hmcts-progress-bar__icon--complete"></span>
+            <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Step 1: </span>Claim accepted</span>
+          </li>
+
+          <li class="hmcts-progress-bar__list-item">
+            <span class="hmcts-progress-bar__icon hmcts-progress-bar__icon--complete"></span>
+            <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Current Step 2: </span>Response received</span>
+          </li>
+
+          <li class="hmcts-progress-bar__list-item" aria-current="step">
+            <span class="hmcts-progress-bar__icon"></span>
+            <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Step 3: </span>Your hearing details</span>
+          </li>
+
+          <li class="hmcts-progress-bar__list-item">
+            <span class="hmcts-progress-bar__icon"></span>
+            <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Step 4: </span>Your claim decision</span>
+          </li>
+          </ol>
+        </div>
+
 
           <ol class="app-task-list">
             <li>
@@ -82,14 +89,6 @@
                     </a>
                   </span>
                   <strong class="govuk-tag app-task-list__tag govuk-tag--turquoise dashboard-tags" id="eligibility-status">Submitted</strong>
-                </li>
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                    <a class="govuk-link--no-visited-state" href="#" aria-describedby="Acknowledgment of claim letter">
-                      Acknowledgment of claim letter
-                    </a>
-                  </span>
-                  <strong class="govuk-tag app-task-list__tag govuk-tag--turquoise dashboard-tags" id="eligibility-status">Viewed</strong>
                 </li>
               </ul>
             </li>
@@ -127,7 +126,7 @@
 
             <li>
               <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">Requests to the tribunal</span>
+                <span class="app-task-list__section-number">Applications to the tribunal</span>
               </h2>
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
@@ -217,40 +216,41 @@
             <h2 class="govuk-heading-s govuk-!-margin-top-4">I want to...</h2>
               <p class="govuk-body">
                 <a class="govuk-link--no-visited-state" href="#">Contact the tribunal about my case</a><br><br>
-                <a class="govuk-link--no-visited-state" href="#">Find legal advice</a><br><br>
-                <a class="govuk-link--no-visited-state" href="#">Help with tribunal terms</a><br><br>
+                <a class="govuk-link--no-visited-state" href="#">Find legal advice (opens in new tab)</a><br><br>
               </p>
 
             <details class="govuk-details" data-module="govuk-details">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  Call our contact centre
+                  Contact
                 </span>
               </summary>
-              <div class="govuk-details__text">
-                Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
-                <br><br>
-                If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="#"> contact the tribunal directly</a>.
-                <br><br>
-                <b>England & Wales</b>
-                Telephone: 0300 123 1024
-                Textphone: 18001 0300 123 1024
-                <br><br>
-                <b>Welsh language</b>
-                Telephone: 0300 303 5176
-                <br><br>
-                <b>Scotland</b>
-                Telephone: 0300 790 6234
-                Textphone: 18001 0300 790 6234
-                <br><br>
-                Monday to Thursday, 8.30am to 5pm.
-                Friday, 8.30am to 4pm.
-                The centre does not open on bank holidays.
-                <a class="govuk-link--no-visited-state" href="#">Find out about call charges (opens in new tab)</a>
-              </div>
+                  <div class="govuk-details__text">
+                    Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+                    <br><br>
+                    If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="#"> contact the tribunal directly</a>.
+                    <br><br>
+                    <b>England & Wales</b>
+                    Telephone: 0300 123 1024
+                    Textphone: 18001 0300 123 1024
+                    <br><br>
+                    <b>Welsh language</b>
+                    Telephone: 0300 303 5176
+                    <br><br>
+                    <b>Scotland</b>
+                    Telephone: 0300 790 6234
+                    Textphone: 18001 0300 790 6234
+                    <br><br>
+                    Monday to Thursday, 8.30am to 5pm.
+                    Friday, 8.30am to 4pm.
+                    The centre does not open on bank holidays.
+                    <a class="govuk-link--no-visited-state" href="#">Find out about call charges (opens in new tab)</a>
+                  </div>
             </details>
           </div>
         </div>
+      </div>
+    </div>
       </div>
 
 
