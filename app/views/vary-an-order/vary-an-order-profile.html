@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+
+        <h1 class="govuk-heading-l">Application to vary an order</h1>
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Which order do you want to vary?</th>
+              <td class="govuk-table__cell">22 July 2022 <p class="govuk-hint govuk-!-margin-bottom-1">Disability direction order</p></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Which part of this order do you want to vary?</th>
+              <td class="govuk-table__cell">{{data['which-part']}}</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">How do you want to vary the order?</th>
+              <td class="govuk-table__cell">{{data['how']}}</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Why is it in the interests of justice to vary the order?</th>
+              <td class="govuk-table__cell">{{data['why']}}</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Is there any extra information or material you would like to provide?</th>
+              <td class="govuk-table__cell">{{data['supporting-materials']}} <br> {{ data['more-detail']}}</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Do you want to copy this correspondence to the other party to satisfy the Rules of Procedure?</th>
+              <td class="govuk-table__cell">
+                {% if data['rule-92'] === 'yes' %} Yes, I confirm I want to copy this correspondence to the other party to satisfy the Employment Tribunal Rules of Procedure. By selecting this option, a copy of this correspondence will be sent to the other party upon submission. The other party will be notified that any objections to your application should be sent to the tribunal as soon as possible and in any event within 7 days. {% endif %}
+                {% if data['rule-92'] === 'no' %} No, I do not want to copy this correspondence to the other party. {% endif %}</td>
+            </tr>
+            {% if data['rule-92'] === 'no' %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Why do you not want to inform the other party?</th>
+              <td class="govuk-table__cell">{{ data['rule-92-reason']}}</td>
+            </tr>
+            {% endif %}
+          </tbody>
+        </table>
+
+</div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer Contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="#"> contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}
