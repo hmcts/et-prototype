@@ -1,0 +1,262 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <!--Main body-->
+    <div class="govuk-grid-column-two-thirds">
+    <a href="#" class="govuk-back-link" onclick="history.back(-1)">Back</a>
+    <h1 class="govuk-heading-l">Contact the tribunal about your case</h1>
+    <p class="govuk-body">
+      Use the appropriate form to communicate with the tribunal.
+      <br><br>
+      These requests and applications will be reviewed by the tribunal and copied
+      to the respondent who will have an opportunity to respond.
+      <br><br>
+      You may be able to request that some details do not get shared with the respondent.
+
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Withdraw all or part of my claim
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <p class='govuk-body'>Use this form if you’ve reached a settlement or do not want to continue with your claim. <br><br>
+              <a class="govuk-link--no-visited-state" href="#">Give notice that you want to withdraw all or part of your claim</a></p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                Change my personal details
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+            <p class='govuk-body'>
+              Use this form to change the personal details you gave when making your claim. <br><br>
+              <a class="govuk-link--no-visited-state" href="#">I want to change my personal details</a>
+            </p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                Apply to postpone my hearing
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+            <p class='govuk-body'>
+              Use this form to ask the tribunal to postpone your hearing to a later date.<br><br>
+              <a class="govuk-link--no-visited-state" href="#">Apply to postpone my hearing</a>
+            </p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                Vary and order the tribunal has issued
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+            <p class='govuk-body'>
+              Use this form to apply to vary an order the tribunal has issued.<br><br>
+              <a class="govuk-link--no-visited-state" href="vary-an-order-start">Apply to vary an order</a>
+            </p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-5">
+                Apply to have a decision made by a legal officer considered afresh
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+            <p class='govuk-body'>
+              Use this form to apply to have a decision made by the tribunal considered afresh.<br><br>
+              <a class="govuk-link--no-visited-state" href="#">Apply to have a decision considered afresh</a>
+            </p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-6">
+                Amend my claim
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-6" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-6">
+            <p class='govuk-body'>
+              Use this form to request to amend your ET1 claim - including adding or removing claims or details of your claim.<br><br>
+              <a class="govuk-link--no-visited-state" href="#">Apply to amend my claim</a>
+            </p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-7">
+                Order the respondent to do something
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-7" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-7">
+            <p class='govuk-body'>
+              <!-- Use this form to request to amend your ET1 claim - including adding or removing claims or details of your claim.<br><br>
+              <a class="govuk-link--no-visited-state" href="#">Apply to amend my claim</a> -->
+            </p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-8">
+                Order a witness to attend and give evidence
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-8" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-8">
+            <p class='govuk-body'>
+              <!-- Use this form to request to amend your ET1 claim - including adding or removing claims or details of your claim.<br><br>
+              <a class="govuk-link--no-visited-state" href="#">Apply to amend my claim</a> -->
+            </p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-10">
+                Tell the tribunal the respondent has not complied with an order
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-10" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-10">
+            <p class='govuk-body'>
+              <!-- Use this form to request to amend your ET1 claim - including adding or removing claims or details of your claim.<br><br>
+              <a class="govuk-link--no-visited-state" href="#">Apply to amend my claim</a> -->
+            </p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-11">
+                Restrict publicity in my case
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-11" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-11">
+            <p class='govuk-body'>
+              <!-- Use this form to request to amend your ET1 claim - including adding or removing claims or details of your claim.<br><br>
+              <a class="govuk-link--no-visited-state" href="#">Apply to amend my claim</a> -->
+            </p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-12">
+                Strike out all or part of the response
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-12" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-12">
+            <p class='govuk-body'>
+              You can request that the tribunal strike out all or parts of the respondent’ response.<br><br>
+              <a class="govuk-link--no-visited-state" href="#">Strike out all or part of the response</a>
+            </p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-13">
+                Apply for a judgment to be reconsidered
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-13" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-13">
+            <p class='govuk-body'>
+              Use this form to apply to have a judgment made by the tribunal reconsidered.<br><br>
+              <a class="govuk-link--no-visited-state" href="#">Apply to have a judgment reconsided</a>
+            </p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-14">
+                Contact the tribunal about something else
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-14" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-14">
+            <p class='govuk-body'>
+            User this form to tell or ask the tribunal about something relevant to your case, and which is not covered by the other options on this page.<br><br>
+              <a class="govuk-link--no-visited-state" href="#">Apply to have a judgment reconsided</a>
+            </p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-15">
+                Upload documents
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-15" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-15">
+            <!-- <p class='govuk-body'>
+            User this form to tell or ask the tribunal about something relevant to your case, and which is not covered by the other options on this page.<br><br>
+              <a class="govuk-link--no-visited-state" href="#">Apply to have a judgment reconsided</a>
+            </p> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+<!-- Final third-->
+  <div class="govuk-grid-column-one-third">
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}
