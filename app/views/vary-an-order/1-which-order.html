@@ -25,7 +25,43 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
-    </div>
+
+<form action="/which-part-answer" method="post">
+    <span class="govuk-caption-l">Vary an order</span>
+      <h1 class="govuk-heading-l">Which order do you want to vary?</h1>
+
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="which-order" name="which-order" type="radio" value="22">
+              <label class="govuk-label govuk-radios__label" for="which-order">
+                22 July 2022
+              </label>
+              <div id="which-order-hint" class="govuk-hint govuk-radios__hint">
+              Disability direction order
+             </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="which-order-2" name="which-order" type="radio" value="21">
+              <label class="govuk-label govuk-radios__label" for="which-order-2">
+                21 July 2022
+              </label>
+              <div id="which-order-hint" class="govuk-hint govuk-radios__hint">
+              Case management order
+             </div>
+            </div>
+            </div>
+        </fieldset>
+          <div class="govuk-!-margin-top-6">
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+
+            <a href="#" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
+          </div>
+      </form>
+
+</div>
 
   <div class="govuk-grid-column-one-third">
     <details class="govuk-details" data-module="govuk-details">
