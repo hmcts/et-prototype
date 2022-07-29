@@ -25,10 +25,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
-
+  <form action="/which-part-answer" method="post">
     <span class="govuk-caption-l">Vary an order</span>
-      <h1 class="govuk-heading-l">Which order do you want to vary?</h1>
-      <form action="#" method="post">
+      <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="which-part">Which part of this order do you want to vary?</label></h1>
+        <div class="govuk-form-group">
+          <div id="which-part-hint" class="govuk-hint">
+          Give details. Use both the text box or file upload if you need to.
+          </div>
+          <textarea class="govuk-textarea" id="which-part" name="which-part" rows="5" aria-describedby="which-part-hint"></textarea>
+          <label class="govuk-label" for="file-upload-1">
+            Upload a file (optional)
+          </label>
+          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+
+
+        </div>
 
           <div class="govuk-!-margin-top-6">
             <button class="govuk-button" data-module="govuk-button">
@@ -51,7 +62,7 @@
       <div class="govuk-details__text">
         Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
         <br><br>
-        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="#"> contact the tribunal directly</a>.
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="contact-the-tribunal"> contact the tribunal directly</a>.
         <br><br>
         <b>England & Wales</b>
         Telephone: 0300 123 1024

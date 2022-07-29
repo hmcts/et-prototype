@@ -8,8 +8,58 @@ const router = express.Router()
 //     res.redirect('/vary-an-order/2-which-part')
 // })
 
-router.post('/which-part-answer', function (req, res) {
+router.post('/which-order-answer', function (req, res) {
   res.redirect('/vary-an-order/2-which-part')
 })
+
+router.post('/which-part-answer', function (req, res) {
+  res.redirect('/vary-an-order/3-how')
+})
+
+router.post('/how-answer', function (req, res) {
+  res.redirect('/vary-an-order/4-why')
+})
+
+router.post('/why-answer', function (req, res) {
+  res.redirect('/vary-an-order/5-supporting-materials')
+})
+
+router.post('/why-answer', function (req, res) {
+  res.redirect('/vary-an-order/5-supporting-materials')
+})
+
+router.post('/supporting-materials-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var supportingMaterials = req.session.data['supporting-materials']
+
+  // Check whether the variable matches a condition
+  if (supportingMaterials == "Yes"){
+    // Send user to Upload
+    res.redirect('/vary-an-order/6-upload-documents')
+  } else {
+    // Send user to R92
+    res.redirect('/vary-an-order/7-Rule92')
+  }
+})
+
+router.post('/submitted-rule92', function (req, res) {
+
+    // Make a variable and give it the value from 'how-many-balls'
+    var rule92 = req.session.data['rule-92']
+
+    // Check whether the variable matches a condition
+    if (rule92 == "yes"){
+      // Send user to rule92-yes-submitted
+      res.redirect('/vary-an-order/8-rule92-yes-submitted')
+    } else {
+      // // Send user to rule92-no-submitted
+      res.redirect('/vary-an-order/9-rule92-no-submitted')
+    }
+  })
+
+// router.post('/upload-documents-done', function (req, res) {
+//     res.redirect('/vary-an-order/7-Rule92')
+//   }
 
 module.exports = router
