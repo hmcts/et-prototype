@@ -103,7 +103,7 @@ router.post('/restrict-submitted-rule92', function (req, res) {
         res.redirect('/research-22Aug/witness-7-copies')
       } else {
         // // Send user to next question instead
-        res.redirect('/research-22Aug/witness-8-documents')
+        res.redirect('/research-22Aug/witness-9-supporting-materials')
       }
     })
 
