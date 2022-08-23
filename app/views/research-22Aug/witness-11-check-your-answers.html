@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+
+      <form action="witness-12-submitted" method="post">
+        <h1 class="govuk-heading-xl">Check your answers</h1>
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Explain why the same evidence cannot be given by another witness already due to attend</th>
+              <td class="govuk-table__cell">{{ data['explain-why-1'] }}</td>
+              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-1-why">Change</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Explain why it would be proportionate to make this order</th>
+              <td class="govuk-table__cell">{{ data['explain-why-2'] }}</td>
+              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-1-why">Change</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">What's their full name?</th>
+              <td class="govuk-table__cell">{{ data['witness-name'] }}</td>
+              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-2-name">Change</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">What's their address?</th>
+              <td class="govuk-table__cell">1 Main Road, Littlehaxten, {{ data['witness-postcode'] }}</td>
+              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-3-postcode">Change</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Have you asked this witness to attend voluntarily?</th>
+              <td class="govuk-table__cell">{{ data['voluntarily'] }}</td>
+              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-5-voluntarily">Change</td>
+            </tr>
+            {% if data['voluntarily'] == 'Yes' %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Who did you ask and what was their response?</th>
+              <td class="govuk-table__cell">{{ data['voluntarily-yes-answer'] }}</td>
+              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-5-voluntarily">Change</td>
+            </tr>
+            {% endif %}
+
+            {% if data['voluntarily'] == 'No' %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Explain why you have not asked this witness to attend voluntarily</th>
+              <td class="govuk-table__cell">{{ data['voluntarily-no-answer'] }}</td>
+              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-5-voluntarily">Change</td>
+            </tr>
+            {% endif %}
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Do you want this witness to bring documents?</th>
+              <td class="govuk-table__cell">{{ data['witness-documents'] }}</td>
+              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-6-documents">Change</td>
+            </tr>
+
+            {% if data['witness-documents'] == 'Yes' %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Have you asked this witness or anyone else to send you copies of these documents?</th>
+              <td class="govuk-table__cell">{{ data['copies'] }}</td>
+              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-6-documents">Change</td>
+            </tr>
+
+              {% if data['copies'] == 'Yes' %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Who did you ask and what was their response?</th>
+                <td class="govuk-table__cell">{{ data['copies-yes-answer'] }}</td>
+                <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-7-copies">Change</td>
+              </tr>
+              {% endif %}
+
+              {% if data['copies'] == 'No' %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Explain why you have not asked this witness or anyone else to send you copies of the same documents</th>
+                <td class="govuk-table__cell">{{ data['copies-no-answer'] }}</td>
+                <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-7-copies">Change</td>
+              </tr>
+              {% endif %}
+
+            {% endif %}
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Why are these documents relevant to the issues in this case?</th>
+              <td class="govuk-table__cell">{{ data['relevance'] }}</td>
+              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-8-documents">Change</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Is there any extra information or material you would like to provide?</th>
+              <td class="govuk-table__cell">{{data['supporting-materials']}} <br> {{ data['more-detail']}}</td>
+              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="witness-9-supporting-materials">Change</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+          <div class="govuk-!-margin-top-6">
+            <button class="govuk-button" data-module="govuk-button">
+                Submit
+            </button>
+
+            <a href="overview-1" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
+          </div>
+      </form>
+</div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer Contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="#"> contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}

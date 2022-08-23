@@ -26,45 +26,48 @@
     <div class="govuk-grid-column-two-thirds">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
 
-      <form action="/supporting-materials-answer" method="post">
+<form action="restrict-3-media-interest" method="post">
+    <span class="govuk-caption-l">Restrict publicity</span>
+      <h1 class="govuk-heading-l">Tell us how and why the tribunal should prevent or restrict publicity in your case</h1>
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="supporting-materials-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <span class="govuk-caption-l">Vary an order</span>
-                <h1 class="govuk-fieldset__heading">
-                  Is there any extra information or material you would like to provide?
-                </h1>
-              </legend>
-              <div id="supporting-materials-hint" class="govuk-hint">
-                You do not have to provide anything else at this stage but you may upload further documents that could help the tribunal with this application.
+      <p class="govuk-body">The tribunal will consider whether a less significant interference with the principle of open justice would protect the rights identified or satisfy the interests of justice.</p>
 
-              </div>
-              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="supporting-materials" name="supporting-materials" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="supporting-materials">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="supporting-materials-2" name="supporting-materials" type="radio" value="No">
-                  <label class="govuk-label govuk-radios__label" for="supporting-materials-2">
-                    No
-                  </label>
-                </div>
-              </div>
+      <div class="govuk-form-group">
+        <label class="govuk-heading-m" for="1-whose-interests">
+          Whose interests or Convention rights do you want to protect?
+        </label>
+        <textarea class="govuk-textarea" id="1-whose-interests" name="1-whose-interests" rows="5"></textarea>
 
-            </fieldset>
-          </div>
+        <label class="govuk-heading-m" for="2-nature-of-interests">
+          What is the nature of those interests or Convention rights?
+        </label>
+        <textarea class="govuk-textarea" id="2-nature-of-interests" name="2-nature-of-interests" rows="5"></textarea>
 
-          <div class="govuk-!-margin-top-6">
-            <button class="govuk-button" data-module="govuk-button">
-                Continue
-            </button>
+        <label class="govuk-heading-m" for="3-which-parts">
+          Which parts of your case should not be publicised?
+        </label>
+        <textarea class="govuk-textarea" id="3-which-parts" name="3-which-parts" rows="5"></textarea>
 
-            <a href="overview-1" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
-          </div>
+        <label class="govuk-heading-m" for="4-explain-why">
+        Explain why the restrictions you want are needed
+        </label>
+        <div id="4-explain-why-hint" class="govuk-hint">
+         Give details including why a less significant interference would not be enough
+       </div>
+        <textarea class="govuk-textarea" id="4-explain-why" name="4-explain-why" rows="5"></textarea>
+
+      </div>
+
+
+
+
+      <div class="govuk-!-margin-top-6">
+        <button class="govuk-button" data-module="govuk-button">
+        Continue
+        </button>
+
+        <a href="#" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
+      </div>
       </form>
 
 </div>
@@ -73,7 +76,6 @@
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          
           Contact
         </span>
       </summary>

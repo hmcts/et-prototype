@@ -26,36 +26,41 @@
     <div class="govuk-grid-column-two-thirds">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
 
-      <form action="/supporting-materials-answer" method="post">
+      <form action="/research-22Aug/witness-11-check-your-answers" method="post">
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="supporting-materials-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <span class="govuk-caption-l">Vary an order</span>
-                <h1 class="govuk-fieldset__heading">
-                  Is there any extra information or material you would like to provide?
+
+            <span class="govuk-caption-l">Order a witness to attend to give evidence</span>
+                <h1 class="govuk-heading-l">
+                  Provide supporting material
                 </h1>
-              </legend>
-              <div id="supporting-materials-hint" class="govuk-hint">
-                You do not have to provide anything else at this stage but you may upload further documents that could help the tribunal with this application.
 
-              </div>
-              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="supporting-materials" name="supporting-materials" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="supporting-materials">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="supporting-materials-2" name="supporting-materials" type="radio" value="No">
-                  <label class="govuk-label govuk-radios__label" for="supporting-materials-2">
-                    No
-                  </label>
-                </div>
+                <div class="govuk-inset-text">
+                You do not have to provide anything at this stage but you may upload any documents that could help the tribunal with this application. Anything you upload will be visible to all parties, including the respondent.
               </div>
 
-            </fieldset>
+              <p class="govuk-body">Consider when providing material that:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>you can upload letters, photos or documents to support your application</li>
+                  <li>if you are taking a picture of a letter, place it on a flat surface and take the picture from above</li>
+                  <li>if you are uploading written documents with tracked changes, make sure that tracked changes are turned on</li>
+                </ul>
+
+
+                  <label class="govuk-label" for="more-detail">
+                    Use this box to provide any supporting material. You can also upload a file if you wish.
+                  </label>
+                  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+
+                  <div class="govuk-inset-text">
+                  <label class="govuk-label" for="file-upload-1">
+                  <b>  Upload a file</b>
+                  </label>
+                  <input class="govuk-file-upload" id="file-upload-3" name="file-upload-3" type="file"><br><br>
+                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Upload file
+                  </button>
+                </div>
           </div>
 
           <div class="govuk-!-margin-top-6">
@@ -73,7 +78,6 @@
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          
           Contact
         </span>
       </summary>

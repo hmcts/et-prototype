@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+
+<form action="witness-6-documents" method="post">
+    <span class="govuk-caption-l">Order a witness to attend</span>
+      <h1 class="govuk-heading-l">Have you asked this witness to attend voluntarily?</h1>
+
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="voluntarily-yes" name="voluntarily" type="radio" value="Yes" data-aria-controls="conditional-voluntarily">
+            <label class="govuk-label govuk-radios__label" for="voluntarily-yes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-voluntarily">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="voluntarily-yes-answer">
+                What was their response?
+              </label>
+              <div id="voluntarily-yes-answer-hint" class="govuk-hint">
+                Use both the text box or file upload if you need to.
+              </div>
+              <textarea class="govuk-textarea" id="voluntarily-yes-answer" name="voluntarily-yes-answer" rows="5" aria-describedby="more-detail-hint"></textarea>
+              <div class="govuk-inset-text">
+                <label class="govuk-label" for="file-upload-1">
+                 Upload a file
+               </label>
+               <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+
+              </div>
+            </div>
+
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="voluntarily-no" name="voluntarily" type="radio" value="No" data-aria-controls="conditional-voluntarily-no">
+            <label class="govuk-label govuk-radios__label" for="voluntarily-no">
+              No
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-voluntarily-no">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="voluntarily-no-answer">
+                Explain why you have not asked this witness to attend voluntarily
+              </label>
+              <textarea class="govuk-textarea" id="voluntarily-no-answer" name="voluntarily-no-answer" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </div>
+
+          </div>
+        </div>
+      </fieldset>
+
+        <div class="govuk-!-margin-top-6">
+          <button class="govuk-button" data-module="govuk-button">
+          Continue
+          </button>
+
+            <a href="#" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
+          </div>
+      </form>
+
+</div>
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="contact-the-tribunal"> contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}
