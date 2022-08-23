@@ -18,11 +18,36 @@
     </span>
   </p>
 </div>
+{% endblock %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <a href="#" class="govuk-back-link">Back</a>
-  </div>
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+
+<form action="witness-4-select-address" method="post">
+    <span class="govuk-caption-l">Order a witness to attend</span>
+      <h1 class="govuk-heading-l">What's their address?</h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="width-10">
+          Enter a UK postcode
+        </label>
+        <input class="govuk-input govuk-input--width-10" id="witness-postcode" name="witness-postcode" type="text">
+      </div>
+      <a class="govuk-link--no-visited-state govuk-body" href="#">The address is outside of the UK</a>
+
+        <div class="govuk-!-margin-top-6">
+          <button class="govuk-button" data-module="govuk-button">
+              Find address
+          </button>
+
+            <a href="#" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
+          </div>
+      </form>
+
+</div>
 
   <div class="govuk-grid-column-one-third">
     <details class="govuk-details" data-module="govuk-details">
@@ -34,7 +59,7 @@
       <div class="govuk-details__text">
         Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
         <br><br>
-        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="#"> contact the tribunal directly</a>.
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="contact-the-tribunal"> contact the tribunal directly</a>.
         <br><br>
         <b>England & Wales</b>
         Telephone: 0300 123 1024
@@ -54,10 +79,11 @@
       </div>
     </details>
   </div>
-</div>
-{% endblock %}
 
-{% block content %}
-
-
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
 {% endblock %}

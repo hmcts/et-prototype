@@ -1,0 +1,59 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-fifth">
+    <h1 class="govuk-heading-m"> You have a new message from HMCTS</h1>
+    <p class="govuk-body"><b>From:</b> HM Courts & Tribunals Service</p>
+    <p class="govuk-body"><b>To:</b> user@email.com</p>
+  </div>
+
+  <div class="govuk-grid-column-three-fifths">
+    {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+    {{ govukHeader({
+      homepageUrl: "#"
+    }) }}
+
+    <div style="margin-left: 15px; margin-top: 50px;">
+      <p class="govuk-body">
+        Dear Pablo Jimenez,<br>
+        Case number 123456/2022
+
+        <br><br>
+
+        You have a new message from HMCTS about a claim made to an employment tribunal.
+
+        <br><br>
+
+        To view the message, go to <a class="govuk-link--no-visited-state" href="overview-1">https://employmenttribunals.service.gov.uk//en/apply/users/sign_in</a>
+
+        <br><br>
+
+        From,<br>
+        HM Courts & Tribunals Service  </p>
+
+        <hr width="975">
+        <br>
+        <p class="govuk-body">
+        Please do not reply to this email. To contact us, go to:<a href="#"> http://www.justice.gov.uk/contacts/hmcts/tribunals/employment</a>
+        </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-fifth">
+  </div>
+</div>
+
+{% endblock %}

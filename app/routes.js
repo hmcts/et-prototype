@@ -62,4 +62,65 @@ router.post('/submitted-rule92', function (req, res) {
 //     res.redirect('/vary-an-order/7-Rule92')
 //   }
 
+router.post('/restrict-supporting-materials-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var supportingMaterials = req.session.data['supporting-materials']
+
+  // Check whether the variable matches a condition
+  if (supportingMaterials == "Yes"){
+    // Send user to Upload
+    res.redirect('/research-22Aug/restrict-5-upload-documents')
+  } else {
+    // Send user to R92
+    res.redirect('/research-22Aug/restrict-6-Rule92')
+  }
+})
+
+router.post('/restrict-submitted-rule92', function (req, res) {
+
+    // Make a variable and give it the value from 'how-many-balls'
+    var rule92 = req.session.data['rule-92']
+
+    // Check whether the variable matches a condition
+    if (rule92 == "yes"){
+      // Send user to rule92-yes-submitted
+      res.redirect('/research-22Aug/restrict-8-rule92-yes-submitted')
+    } else {
+      // // Send user to rule92-no-submitted
+      res.redirect('/research-22Aug/restrict-9-rule92-no-submitted')
+    }
+  })
+
+  router.post('/witness-documents-answer', function (req, res) {
+
+      // Make a variable and give it the value from 'how-many-balls'
+      var documents = req.session.data['witness-documents']
+
+      // Check whether the variable matches a condition
+      if (documents == "Yes"){
+        // Send user to the second document question
+        res.redirect('/research-22Aug/witness-7-copies')
+      } else {
+        // // Send user to next question instead
+        res.redirect('/research-22Aug/witness-8-documents')
+      }
+    })
+
+    router.post('/witness-supporting-materials-answer', function (req, res) {
+
+      // Make a variable and give it the value from 'how-many-balls'
+      var supportingMaterials = req.session.data['supporting-materials']
+
+      // Check whether the variable matches a condition
+      if (supportingMaterials == "Yes"){
+        // Send user to Upload
+        res.redirect('/research-22Aug/witness-10-upload-documents')
+      } else {
+        // Send user to R92
+        res.redirect('/research-22Aug/witness-11-check-your-answers')
+      }
+    })
+
+
 module.exports = router

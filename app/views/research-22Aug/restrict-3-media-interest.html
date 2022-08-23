@@ -26,45 +26,50 @@
     <div class="govuk-grid-column-two-thirds">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
 
-      <form action="/supporting-materials-answer" method="post">
+<form action="restrict-4-supporting-materials" method="post">
+    <span class="govuk-caption-l">Restrict publicity</span>
+      <h1 class="govuk-heading-l">Are you aware of any media interest in your case?</h1>
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="supporting-materials-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <span class="govuk-caption-l">Vary an order</span>
-                <h1 class="govuk-fieldset__heading">
-                  Is there any extra information or material you would like to provide?
-                </h1>
-              </legend>
-              <div id="supporting-materials-hint" class="govuk-hint">
-                You do not have to provide anything else at this stage but you may upload further documents that could help the tribunal with this application.
 
-              </div>
-              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="supporting-materials" name="supporting-materials" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="supporting-materials">
-                    Yes
-                  </label>
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="media-interest-yes" name="media-interest" type="radio" value="Yes" data-aria-controls="conditional-media-interest">
+              <label class="govuk-label govuk-radios__label" for="media-interest-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-media-interest">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="media-interest-yes-answer">
+                  Which media organisations or journalists are interested in your case?
+                </label>
+                <div id="media-interest-yes-answer-hint" class="govuk-hint">
+                  Give details. The tribunal might seek their comments before making a decision.
                 </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="supporting-materials-2" name="supporting-materials" type="radio" value="No">
-                  <label class="govuk-label govuk-radios__label" for="supporting-materials-2">
-                    No
-                  </label>
-                </div>
+                <textarea class="govuk-textarea" id="media-interest-yes-answer" name="media-interest-yes-answer" rows="5" aria-describedby="more-detail-hint"></textarea>
               </div>
-
-            </fieldset>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="media-interest-no" name="media-interest" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="media-interest-no">
+                No
+              </label>
+            </div>
           </div>
+        </fieldset>
 
-          <div class="govuk-!-margin-top-6">
-            <button class="govuk-button" data-module="govuk-button">
-                Continue
-            </button>
 
-            <a href="overview-1" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
-          </div>
+
+
+
+      <div class="govuk-!-margin-top-6">
+        <button class="govuk-button" data-module="govuk-button">
+        Continue
+        </button>
+
+        <a href="#" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
+      </div>
       </form>
 
 </div>
@@ -73,7 +78,6 @@
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          
           Contact
         </span>
       </summary>

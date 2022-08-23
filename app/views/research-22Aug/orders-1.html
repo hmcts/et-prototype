@@ -24,56 +24,36 @@
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+    <a href="#" class="govuk-back-link" style="margin-top: -10px;" onclick="history.back(-1)">Back</a>
+    <h1 class="govuk-heading-l">All orders and requests</h1>
 
-      <form action="/supporting-materials-answer" method="post">
-
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="supporting-materials-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <span class="govuk-caption-l">Vary an order</span>
-                <h1 class="govuk-fieldset__heading">
-                  Is there any extra information or material you would like to provide?
-                </h1>
-              </legend>
-              <div id="supporting-materials-hint" class="govuk-hint">
-                You do not have to provide anything else at this stage but you may upload further documents that could help the tribunal with this application.
-
-              </div>
-              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="supporting-materials" name="supporting-materials" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="supporting-materials">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="supporting-materials-2" name="supporting-materials" type="radio" value="No">
-                  <label class="govuk-label govuk-radios__label" for="supporting-materials-2">
-                    No
-                  </label>
-                </div>
-              </div>
-
-            </fieldset>
-          </div>
-
-          <div class="govuk-!-margin-top-6">
-            <button class="govuk-button" data-module="govuk-button">
-                Continue
-            </button>
-
-            <a href="overview-1" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
-          </div>
-      </form>
-
-</div>
+        <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-half">Orders and requests</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">23 August 2022</td>
+            <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="notice-of-hearing">Notice of hearing and submit hearing agenda</a></td>
+            <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--red dashboard-tags" id="eligibility-status">Not viewed yet</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">2 August 2022</td>
+            <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="#">Order to do something</a></td>
+            <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--turquoise dashboard-tags" id="eligibility-status">Viewed</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
   <div class="govuk-grid-column-one-third">
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          
           Contact
         </span>
       </summary>

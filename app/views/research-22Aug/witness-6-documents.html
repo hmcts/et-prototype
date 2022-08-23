@@ -26,44 +26,39 @@
     <div class="govuk-grid-column-two-thirds">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
 
-      <form action="/supporting-materials-answer" method="post">
+    <form action="/witness-documents-answer" method="post">
+      <span class="govuk-caption-l">Order a witness to attend</span>
+        <h1 class="govuk-heading-l">Do you want this witness to bring documents?</h1>
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="supporting-materials-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <span class="govuk-caption-l">Vary an order</span>
-                <h1 class="govuk-fieldset__heading">
-                  Is there any extra information or material you would like to provide?
-                </h1>
-              </legend>
-              <div id="supporting-materials-hint" class="govuk-hint">
-                You do not have to provide anything else at this stage but you may upload further documents that could help the tribunal with this application.
-
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="witness-documents-hint">
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="witness-documents" name="witness-documents" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="witness-documents">
+                  Yes
+                </label>
               </div>
-              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="supporting-materials" name="supporting-materials" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="supporting-materials">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="supporting-materials-2" name="supporting-materials" type="radio" value="No">
-                  <label class="govuk-label govuk-radios__label" for="supporting-materials-2">
-                    No
-                  </label>
-                </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="witness-documents-2" name="witness-documents" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="witness-documents-2">
+                  No
+                </label>
               </div>
+            </div>
 
-            </fieldset>
-          </div>
+          </fieldset>
+        </div>
 
-          <div class="govuk-!-margin-top-6">
-            <button class="govuk-button" data-module="govuk-button">
-                Continue
-            </button>
 
-            <a href="overview-1" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
+
+
+        <div class="govuk-!-margin-top-6">
+          <button class="govuk-button" data-module="govuk-button">
+          Continue
+          </button>
+
+            <a href="#" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
           </div>
       </form>
 
@@ -73,7 +68,6 @@
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          
           Contact
         </span>
       </summary>
