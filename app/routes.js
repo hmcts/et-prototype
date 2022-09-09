@@ -122,5 +122,20 @@ router.post('/restrict-submitted-rule92', function (req, res) {
       }
     })
 
+    router.post('/respondent-address-answer', function (req, res) {
+
+      // Make a variable and give it the value from 'how-many-balls'
+      var respondentAddress = req.session.data['respondent-correct-address']
+
+      // Check whether the variable matches a condition
+      if (respondentAddress == "Yes"){
+        // Send user to Preferred contact name
+        res.redirect('/et3-research/09-contact-name')
+      } else {
+        // Enter new address
+        res.redirect('/et3-research/06-new-respondent-address')
+      }
+    })
+
 
 module.exports = router
