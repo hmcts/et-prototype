@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+    <h1 class="govuk-heading-xl">Your response form (ET3)</h1>
+    <p class="govuk-body">To help you complete this, open:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#">Acas certificate (opens in new tab)</a></li>
+        <li><a href="#">ET1 claim form (opens in new tab)</a></li>
+      </ul>
+
+    <div class="govuk-inset-text">
+      If you do not provide a response, a judgment may be issued against you without a hearing.<br><br>
+      If you consider another person or company may be liable, you should still submit a response. You will have a chance in this response to explain why you think someone else may be liable.
+    </div>
+
+
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Respondent information
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="Employer-contact-details-status">
+                  Employer and contact details
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag govuk-tag--red dashboard-tags" id="Employer-contact-details-status">Not started yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="hearing-and-workforce-status">
+                  Hearing and workforce
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--red app-task-list__tag dashboard-tags" id="hearing-and-workforce-status">Not started yet</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Claimant information
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="early-conciliation-status">
+                  Early conciliation and employee details
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--red app-task-list__tag dashboard-tags" id="early-conciliation-status">Not started yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="pay-pension-benefits-status">
+                  Pay, pension and benefits
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--red dashboard-tags app-task-list__tag" id="pay-pension-benefits-status">Not started yet</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Response details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="contesting-the-claim-status">
+                  Contesting the claim
+                </a>
+              </span>
+              <strong class="govuk-tag dashboard-tags govuk-tag--red app-task-list__tag" id="contesting-the-claim-status">Not started yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="ECC-status">
+                  Employer's Contract Claim
+                </a>
+              </span>
+              <strong class="govuk-tag dashboard-tags govuk-tag--red app-task-list__tag" id="ECC-status">Not started yet</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Check and submit
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Check your answers
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag dashboard-tags" id="check-status">Cannot start yet</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="contact-the-tribunal"> contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}
