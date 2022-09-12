@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form action="23-employment-continuing" method="post">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+    <span class="govuk-caption-l">Claimant information</span>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Claimant employment dates</h1>
+
+    <div class="govuk-form-group govuk-!-margin-top-7">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Employment start date (optional)
+            </h1>
+          </legend>
+          <div id="start-date-hint" class="govuk-hint">
+            For example, 23 4 2007
+          </div>
+          <div class="govuk-date-input" id="start-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="start-date-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-day" name="start-date-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="start-date-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month" name="start-date-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="start-date-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="govuk-fieldset govuk-!-margin-top-7" role="group" aria-describedby="end-date-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Employment end date (optional)
+            </h1>
+          </legend>
+          <div id="start-date-hint" class="govuk-hint">
+            For example, 23 4 2022
+          </div>
+          <div class="govuk-date-input" id="end-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="end-date-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end-date-day" name="end-date-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="end-date-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end-date-month" name="end-date-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="end-date-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="end-date-year" name="end-date-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="govuk-form-group govuk-!-margin-top-7">
+          <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+              Do you want to provide any further information about the claimant's employment dates? (optional)
+            </label>
+          </h3>
+          <textarea class="govuk-textarea" id="employment-dates-detail" name="employment-dates-detail" rows="5" aria-describedby="employment-dates-detail-hint"></textarea>
+        </div>
+
+      </div>
+
+    <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+      Save and continue
+    </button>
+
+    <button class="govuk-button govuk-button--secondary" type="button" data-module="govuk-button" onclick="window.location.href='/et3-research/saved';">
+      Save as draft
+    </button>
+    </div>
+  </form>
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="respondent-name-the-tribunal"> Contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}

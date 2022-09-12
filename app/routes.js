@@ -137,5 +137,38 @@ router.post('/restrict-submitted-rule92', function (req, res) {
       }
     })
 
+    router.post('/claimant-employment-dates', function (req, res) {
+
+      // Make a variable and give it the value from 'how-many-balls'
+      var employeeDates = req.session.data['claimant-employee-dates']
+
+      // Check whether the variable matches a condition
+      if (employeeDates == "No"){
+        // Send user to Preferred contact name
+        res.redirect('/et3-research/22-claimant-employment-dates')
+      } else {
+        // Enter new address
+        res.redirect('/et3-research/23-employment-continuing')
+      }
+    })
+
+    router.post('/claimant-pay-answer', function (req, res) {
+
+      // Make a variable and give it the value from 'how-many-balls'
+      var claimantPay = req.session.data['claimant-pay']
+
+      // Check whether the variable matches a condition
+      if (claimantPay == "No"){
+        // Send user to Preferred contact name
+        res.redirect('/et3-research/28-claimant-pay')
+      } else {
+        // Enter new address
+        res.redirect('/et3-research/29-claimant-notice')
+      }
+    })
+
+
+
+
 
 module.exports = router
