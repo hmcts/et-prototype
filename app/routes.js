@@ -167,6 +167,36 @@ router.post('/restrict-submitted-rule92', function (req, res) {
       }
     })
 
+    router.post('/contesting-the-claim-answer', function (req, res) {
+
+      // Make a variable and give it the value from 'how-many-balls'
+      var contesting = req.session.data['contest']
+
+      // Check whether the variable matches a condition
+      if (contesting == "Yes"){
+        // Send user to Preferred contact name
+        res.redirect('/et3-research/33-contest-the-claim')
+      } else {
+        // Enter new address
+        res.redirect('/et3-research/34-check-your-answers')
+      }
+    })
+
+    router.post('/contract-claim-answer', function (req, res) {
+
+      // Make a variable and give it the value from 'how-many-balls'
+      var contractClaim = req.session.data['ECC']
+
+      // Check whether the variable matches a condition
+      if (contractClaim == "Yes"){
+        // Send user to Preferred contact name
+        res.redirect('/et3-research/36-contract-claim-details')
+      } else {
+        // Enter new address
+        res.redirect('/et3-research/37-check-your-answers')
+      }
+    })
+
 
 
 

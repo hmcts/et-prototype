@@ -24,121 +24,58 @@
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-    <form action="20-acas" method="post">
+    <form action="38-check-your-answers" method="post">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
 
     <h1 class="govuk-heading-xl">Check your answers</h1>
-    <h2 class="govuk-heading-m">Hearing and workforce</h2>
+    <h2 class="govuk-heading-m">Employer's contract claim</h2>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Would you be able to take part in hearings by video and phone?
+          Does the respondent wish to make an Employer’s Contract Claim?
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['hearings'] }}
+          {{ data['ECC'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link govuk-link--no-visited-state" href="14-hearing-format">
-            Change<span class="govuk-visually-hidden"> hearings</span>
+          <a class="govuk-link govuk-link--no-visited-state" href="35-contract-claim">
+            Change<span class="govuk-visually-hidden"> contract claim</span>
           </a>
         </dd>
       </div>
-
-    {% if data['hearings'] === 'No, I cannot take part in either video or phone hearings' %}
+      {% if data['ECC'] === 'Yes' %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Explain why you are unable to take part in video or phone hearings
+          Provide the background and details of your Employer’s Contract Claim
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['hearings-reason'] }}
+          {{ data['ECC-details'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link govuk-link--no-visited-state" href="14-hearing-format">
-            Change<span class="govuk-visually-hidden"> hearings reason</span>
+          <a class="govuk-link govuk-link--no-visited-state" href="35-contract-claim-details">
+            Change<span class="govuk-visually-hidden"> contract claim</span>
           </a>
         </dd>
       </div>
-    {% endif %}
-
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Do you have a physical, mental or learning disability or health condition that means you need support during your case?
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['extra-support'] }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link govuk-link--no-visited-state" href="15-extra-support">
-          Change<span class="govuk-visually-hidden"> extra support</span>
-        </a>
-      </dd>
-    </div>
-
-    {% if data['extra-support'] === 'Yes' %}
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Tell us what support you need to request
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['extra-support-details'] }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link govuk-link--no-visited-state" href="15-extra-support">
-          Change<span class="govuk-visually-hidden"> extra support</span>
-        </a>
-      </dd>
-    </div>
-    {% endif %}
-
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        How many people does the respondent employ in Great Britain? (optional)
-      </dt>
-      <dd class="govuk-summary-list__value">
-      {% if data['number-of-employees'] %}
-      {{ data['number-of-employees'] }}
-      {% else %}
-      Not provided
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Supporting material
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['file-upload-2'] %}
+          <a href="#">{{ data['file-upload-2'] }}</a>
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="35-contract-claim-details">
+            Change<span class="govuk-visually-hidden"> contesting the claim</span>
+          </a>
+        </dd>
+      </div>
       {% endif %}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link govuk-link--no-visited-state" href="16-employees">
-          Change<span class="govuk-visually-hidden"> number of employees</span>
-        </a>
-      </dd>
-    </div>
 
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Does the respondent have more than one site in Great Britain?
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['respondent-sites'] }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link govuk-link--no-visited-state" href="17-sites">
-          Change<span class="govuk-visually-hidden"> number of sites</span>
-        </a>
-      </dd>
-    </div>
-
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        How many employed at the site the claimant worked at? (optional)
-      </dt>
-      <dd class="govuk-summary-list__value">
-      {% if data['employees-at-site'] %}
-      {{ data['employees-at-site'] }}
-      {% else %}
-      Not provided
-      {% endif %}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link govuk-link--no-visited-state" href="18-employees-at-site">
-          Change<span class="govuk-visually-hidden"> employees at site</span>
-        </a>
-      </dd>
-    </div>
     </dl>
 
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -152,14 +89,14 @@
       </div>
       <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="hearing-workforce-completed" name="hearing-workforce-completed" type="radio" value="Yes">
-          <label class="govuk-label govuk-radios__label" for="hearing-workforce-completed">
+          <input class="govuk-radios__input" id="pay-benefits-completed" name="pay-benefits-completed" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="pay-benefits-completed">
             Yes, I've completed this section
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="hearing-workforce-completed-2" name="hearing-workforce-completed" type="radio" value="No">
-          <label class="govuk-label govuk-radios__label" for="hearing-workforce-completed-2">
+          <input class="govuk-radios__input" id="pay-benefits-completed-2" name="pay-benefits-completed" type="radio" value="No">
+          <label class="govuk-label govuk-radios__label" for="pay-benefits-completed-2">
             No, I'll come back later
           </label>
         </div>

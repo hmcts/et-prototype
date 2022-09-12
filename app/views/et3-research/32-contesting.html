@@ -24,53 +24,37 @@
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-    <form action="04-employer-type" method="post">
+    <form action="/contesting-the-claim-answer" method="post">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
-    <span class="govuk-caption-l">Respondent information</span>
-    <h1 class="govuk-heading-l">Registered name of respondent</h1>
-
-    <div class="govuk-inset-text">
-      If you consider another person or company may be liable, you should still submit a response.
-      <br><br>
-      You will have a chance in this form to explain why you think someone else may be liable.
-    </div>
-
-
 
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="respondent-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h1 class="govuk-fieldset__heading">
-            Is Redde Limited the respondent's correct registered name?
-          </h1>
-        </legend>
+        <fieldset class="govuk-fieldset">
 
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="respondent-name" name="respondent-name" type="radio" value="Yes">
-            <label class="govuk-label govuk-radios__label" for="respondent-name">
-              Yes
-            </label>
-          </div>
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="respondent-name-2" name="respondent-name" type="radio" value="No" data-aria-controls="conditional-respondent-name-2">
-            <label class="govuk-label govuk-radios__label" for="respondent-name-2">
-              No
-            </label>
-          </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-respondent-name-2">
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="respondent-name-correction">
-                Enter registered name
+          <div class="govuk-radios" data-module="govuk-radios">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Response details</span>
+              <h1 class=" govuk-heading-l">
+                Does Redde Limited contest the claim?
+              </h1>
+             </legend>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contest" name="contest" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="contest">
+                Yes - Redde Limited contests all or part of the claim
               </label>
-              <input class="govuk-input govuk-!-width-full" id="respondent-name-correction" name="respondent-name-corrected" type="tel" autocomplete="tel">
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contest-2" name="contest" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="contest-2">
+                No - Redde Limited does not contest any of the claim
+              </label>
             </div>
           </div>
-        </div>
-    </fieldset>
-    </div>
-    <div class="govuk-button-group">
+
+        </fieldset>
+      </div>
+
+    <div class="govuk-button-group govuk-!-margin-top-8">
     <button class="govuk-button" data-module="govuk-button" type="submit">
       Save and continue
     </button>

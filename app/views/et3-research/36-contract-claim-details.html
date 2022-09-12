@@ -24,53 +24,58 @@
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-    <form action="04-employer-type" method="post">
+    <form action="37-check-your-answers" method="post">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
-    <span class="govuk-caption-l">Respondent information</span>
-    <h1 class="govuk-heading-l">Registered name of respondent</h1>
-
-    <div class="govuk-inset-text">
-      If you consider another person or company may be liable, you should still submit a response.
-      <br><br>
-      You will have a chance in this form to explain why you think someone else may be liable.
-    </div>
-
-
 
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="respondent-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h1 class="govuk-fieldset__heading">
-            Is Redde Limited the respondent's correct registered name?
-          </h1>
-        </legend>
+        <fieldset class="govuk-fieldset">
 
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="respondent-name" name="respondent-name" type="radio" value="Yes">
-            <label class="govuk-label govuk-radios__label" for="respondent-name">
-              Yes
-            </label>
+          <div class="govuk-radios" data-module="govuk-radios">
+              <span class="govuk-caption-l">Response details</span>
+              <h1 class=" govuk-heading-l">
+                Provide the background and details of your Employer’s Contract Claim
+              </h1>
+
+
+              <p class="govuk-body govuk-!-margin-top-5">Consider in your answer:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>the background and details of your claim</li>
+                  <li>all important dates</li>
+                  <li>the value of your claim and how you calculated it</li>
+                </ul>
+
+
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="ECC-details">
+                    Provide the background and details of your Employer’s Contract Claim
+                  </label>
+                </h2>
+                <!-- <div id="contestation-hint" class="govuk-hint">
+                  Do not include personal or financial information, like your National Insurance number or credit card details.
+                </div> -->
+                <textarea class="govuk-textarea" id="ECC-details" name="ECC-details" rows="8" aria-describedby="ECC-details-hint"></textarea>
+              </div>
+
+              <div class="govuk-inset-text">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="file-upload-2">
+                    <b>Upload a file (optional)</b>
+                  </label>
+                  <input class="govuk-file-upload" id="file-upload-2" name="file-upload-2" type="file">
+                  <br><br>
+                  <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-1" data-module="govuk-button" onclick="#">
+                    Upload file
+                  </button>
+                </div>
+              </div>
+
+
           </div>
 
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="respondent-name-2" name="respondent-name" type="radio" value="No" data-aria-controls="conditional-respondent-name-2">
-            <label class="govuk-label govuk-radios__label" for="respondent-name-2">
-              No
-            </label>
-          </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-respondent-name-2">
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="respondent-name-correction">
-                Enter registered name
-              </label>
-              <input class="govuk-input govuk-!-width-full" id="respondent-name-correction" name="respondent-name-corrected" type="tel" autocomplete="tel">
-            </div>
-          </div>
-        </div>
-    </fieldset>
-    </div>
-    <div class="govuk-button-group">
+
+      </div>
+
+    <div class="govuk-button-group govuk-!-margin-top-8">
     <button class="govuk-button" data-module="govuk-button" type="submit">
       Save and continue
     </button>

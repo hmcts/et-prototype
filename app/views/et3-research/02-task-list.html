@@ -45,21 +45,40 @@
             <span class="app-task-list__section-number">1. </span> Respondent information
           </h2>
           <ul class="app-task-list__items">
+            {% if data['employer-details-completed'] === '' %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="03-registered-name" aria-describedby="Employer-contact-details-status">
+                <a class="govuk-link govuk-link--no-visited-state" href="03-registered-name" aria-describedby="Employer-contact-details-status">
                   Employer and contact details
                 </a>
               </span>
+              {% if data['respondent-name'] %}
+              <strong class="govuk-tag app-task-list__tag govuk-tag--yellow dashboard-tags" id="Employer-contact-details-status">In progress</strong>
+              {% else %}
               <strong class="govuk-tag app-task-list__tag govuk-tag--red dashboard-tags" id="Employer-contact-details-status">Not started yet</strong>
+              {% endif %}
             </li>
+            {% else %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="hearing-and-workforce-status">
+                <a class="govuk-link govuk-link--no-visited-state" href="13-check-your-answers" aria-describedby="Employer-contact-details-status">
+                  Employer and contact details
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag govuk-tag--green dashboard-tags" id="Employer-contact-details-status">Completed</strong>
+            </li>
+            {% endif %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link govuk-link--no-visited-state" href="14-hearing-format" aria-describedby="hearing-and-workforce-status">
                   Hearing and workforce
                 </a>
               </span>
+              {% if data['hearings'] %}
+              <strong class="govuk-tag govuk-tag--yellow app-task-list__tag dashboard-tags" id="hearing-and-workforce-status">In progress</strong>
+              {% else %}
               <strong class="govuk-tag govuk-tag--red app-task-list__tag dashboard-tags" id="hearing-and-workforce-status">Not started yet</strong>
+              {% endif %}
             </li>
           </ul>
         </li>
@@ -71,19 +90,27 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="early-conciliation-status">
+                <a class="govuk-link--no-visited-state" href="20-acas" aria-describedby="early-conciliation-status">
                   Early conciliation and employee details
                 </a>
               </span>
+              {% if data['acas-details'] %}
+              <strong class="govuk-tag govuk-tag--yellow app-task-list__tag dashboard-tags" id="early-conciliation-status">In progress</strong>
+              {% else %}
               <strong class="govuk-tag govuk-tag--red app-task-list__tag dashboard-tags" id="early-conciliation-status">Not started yet</strong>
+              {% endif %}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="pay-pension-benefits-status">
+                <a class="govuk-link--no-visited-state" href="27-claimant-pay" aria-describedby="pay-pension-benefits-status">
                   Pay, pension and benefits
                 </a>
               </span>
+              {% if data['claimant-pay'] %}
+              <strong class="govuk-tag govuk-tag--yellow dashboard-tags app-task-list__tag" id="pay-pension-benefits-status">In progress</strong>
+              {% else %}
               <strong class="govuk-tag govuk-tag--red dashboard-tags app-task-list__tag" id="pay-pension-benefits-status">Not started yet</strong>
+              {% endif %}
             </li>
           </ul>
         </li>
@@ -95,19 +122,27 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="contesting-the-claim-status">
+                <a class="govuk-link--no-visited-state" href="32-contesting" aria-describedby="contesting-the-claim-status">
                   Contesting the claim
                 </a>
               </span>
+              {% if data['contest'] %}
+              <strong class="govuk-tag dashboard-tags govuk-tag--yellow app-task-list__tag" id="contesting-the-claim-status">In progress</strong>
+              {% else %}
               <strong class="govuk-tag dashboard-tags govuk-tag--red app-task-list__tag" id="contesting-the-claim-status">Not started yet</strong>
+              {% endif %}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="ECC-status">
+                <a class="govuk-link--no-visited-state" href="35-contract-claim" aria-describedby="ECC-status">
                   Employer's Contract Claim
                 </a>
               </span>
+              {% if data['ECC'] %}
+              <strong class="govuk-tag dashboard-tags govuk-tag--yellow app-task-list__tag" id="ECC-status">In progress</strong>
+              {% else %}
               <strong class="govuk-tag dashboard-tags govuk-tag--red app-task-list__tag" id="ECC-status">Not started yet</strong>
+              {% endif %}
             </li>
           </ul>
         </li>
