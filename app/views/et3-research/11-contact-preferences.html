@@ -24,15 +24,119 @@
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-    <form action="11-contact-preferences" method="post">
+    <form action="12-contact-phone-number" method="post">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
     <span class="govuk-caption-l">Respondent information</span>
     <h1 class="govuk-heading-l">Respondent contact preferences</h1>
 
-    <div class="govuk-form-group">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Postal address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          53-79 Highgate Road, Kentish Town, London, NW5 1TL
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="07-new-respondent-address">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          DX address (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['DX-address'] %}
+          {{ data['DX-address'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="10-DX-address">
+            Change<span class="govuk-visually-hidden"> DX address</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+        hello@reddeltd.co.uk
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link govuk-link--no-visited-state" href="10-DX-address">
+            Change<span class="govuk-visually-hidden"> DX address</span>
+          </a> -->
+        </dd>
+      </div>
+    </dl>
 
-    
-    </div>
+    <p class="govuk-body">Normally the tribunal will contact you by email. If you need contact by post, you must explain why.</p>
+    <p class="govuk-body">To change your email address, <a class="govuk-link govuk-link--no-visited-state" href="#">contact the tribunal (opens in new tab)</a>.
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              How would you prefer to be contacted?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="Email" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Email
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="Post" data-aria-controls="conditional-contact-2">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                Post
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-post">
+                  Explain why you have selected post.
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="contact-by-post" name="contact-by-post">
+              </div>
+            </div>
+            </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="language-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Which language should the tribunal use to contact you?
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="language" name="language" type="radio" value="English">
+              <label class="govuk-label govuk-radios__label" for="language">
+                English
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="language-2" name="language" type="radio" value="Cymraeg">
+              <label class="govuk-label govuk-radios__label" for="language-2">
+                Cymraeg
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+
     <div class="govuk-button-group">
     <button class="govuk-button" data-module="govuk-button" type="submit">
       Save and continue

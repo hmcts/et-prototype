@@ -24,27 +24,18 @@
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-    <form action="09-contact-name" method="post">
+    <form action="13-check-your-answers" method="post">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
     <span class="govuk-caption-l">Respondent information</span>
-    <h1 class="govuk-heading-l">Respondent address</h1>
+    <h1 class="govuk-heading-l">What is your contact phone number? (optional)</h1>
 
-    <h2 class="govuk-heading-m">Postcode</h2>
-    <h3 class="govuk-heading-m">{{ data['respondent-postcode'] }}<a class="govuk-link govuk-body govuk-link--no-visited-state govuk-!-padding-left-4" href="06-new-respondent-address">Change</a></h3>
-
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="select-address">
-        Select an address
-      </label>
-      <select class="govuk-select" id="respondent-address" name="respondent-address">
-        <option value="1 address found" selected>1 address found</option>
-        <option value="101 Court Road, London, {{ data['respondent-postcode' ]}}">101 Court Road, London, {{ data['respondent-postcode' ]}}</option>
-      </select>
+    <div id="contact-number-hint" class="govuk-hint">
+      Where we can contact you during the day. For international numbers include the country code.
     </div>
+     <input class="govuk-input govuk-input--width-20 govuk-!-margin-bottom-5" id="contact-number" name="contact-number" type="text">
 
-    <a class="govuk-link govuk-body govuk-link--no-visited-state" href="08-respondent-manual-address">I cannot find the address in the list</a>
 
-    <div class="govuk-button-group govuk-!-margin-top-5">
+    <div class="govuk-button-group">
     <button class="govuk-button" data-module="govuk-button" type="submit">
       Save and continue
     </button>
@@ -68,7 +59,7 @@
       <div class="govuk-details__text">
         Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
         <br><br>
-        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="employer-type-the-tribunal"> Contact the tribunal directly</a>.
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="respondent-name-the-tribunal"> Contact the tribunal directly</a>.
         <br><br>
         <b>England & Wales</b>
         Telephone: 0300 123 1024
