@@ -122,5 +122,83 @@ router.post('/restrict-submitted-rule92', function (req, res) {
       }
     })
 
+    router.post('/respondent-address-answer', function (req, res) {
+
+      // Make a variable and give it the value from 'how-many-balls'
+      var respondentAddress = req.session.data['respondent-correct-address']
+
+      // Check whether the variable matches a condition
+      if (respondentAddress == "Yes"){
+        // Send user to Preferred contact name
+        res.redirect('/et3-research/09-contact-name')
+      } else {
+        // Enter new address
+        res.redirect('/et3-research/06-new-respondent-address')
+      }
+    })
+
+    router.post('/claimant-employment-dates', function (req, res) {
+
+      // Make a variable and give it the value from 'how-many-balls'
+      var employeeDates = req.session.data['claimant-employee-dates']
+
+      // Check whether the variable matches a condition
+      if (employeeDates == "No"){
+        // Send user to Preferred contact name
+        res.redirect('/et3-research/22-claimant-employment-dates')
+      } else {
+        // Enter new address
+        res.redirect('/et3-research/23-employment-continuing')
+      }
+    })
+
+    router.post('/claimant-pay-answer', function (req, res) {
+
+      // Make a variable and give it the value from 'how-many-balls'
+      var claimantPay = req.session.data['claimant-pay']
+
+      // Check whether the variable matches a condition
+      if (claimantPay == "No"){
+        // Send user to Preferred contact name
+        res.redirect('/et3-research/28-claimant-pay')
+      } else {
+        // Enter new address
+        res.redirect('/et3-research/29-claimant-notice')
+      }
+    })
+
+    router.post('/contesting-the-claim-answer', function (req, res) {
+
+      // Make a variable and give it the value from 'how-many-balls'
+      var contesting = req.session.data['contest']
+
+      // Check whether the variable matches a condition
+      if (contesting == "Yes"){
+        // Send user to Preferred contact name
+        res.redirect('/et3-research/33-contest-the-claim')
+      } else {
+        // Enter new address
+        res.redirect('/et3-research/34-check-your-answers')
+      }
+    })
+
+    router.post('/contract-claim-answer', function (req, res) {
+
+      // Make a variable and give it the value from 'how-many-balls'
+      var contractClaim = req.session.data['ECC']
+
+      // Check whether the variable matches a condition
+      if (contractClaim == "Yes"){
+        // Send user to Preferred contact name
+        res.redirect('/et3-research/36-contract-claim-details')
+      } else {
+        // Enter new address
+        res.redirect('/et3-research/37-check-your-answers')
+      }
+    })
+
+
+
+
 
 module.exports = router

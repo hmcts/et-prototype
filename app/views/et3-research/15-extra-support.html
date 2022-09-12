@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form action="16-employees" method="post">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+    <span class="govuk-caption-xl">Respondent information</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Extra support during the case</h1>
+
+    <div class="govuk-inset-text">
+      We know some people need support to access information and use our services. We call this a reasonable adjustment. Some reasonable adjustments need to be agreed by a judge or HMCTS. You can discuss with the tribunal if your needs change.
+    </div>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What support is available?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">Reasonable adjustments can include:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>documents in alternative formats, colours and fonts</li>
+            <li>help with communicating, sight, hearing, speaking and interpretation</li>
+            <li>access and mobility support if a hearing takes place in person</li>
+          </ul></div>
+    </details>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Do you have a physical, mental or learning disability or health condition that means you need support during the case?
+          </h1>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="extra-support" name="extra-support" type="radio" value="Yes" data-aria-controls="conditional-extra-support">
+            <label class="govuk-label govuk-radios__label" for="extra-support">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-extra-support">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="extra-support-details">
+                Tell us what support you need.
+              </label>
+              <textarea class="govuk-textarea govuk-!-width-full" rows="4" id="extra-support-details" name="extra-support-details"></textarea>
+            </div>
+
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="extra-support-2" name="extra-support" type="radio" value="No - I do not need any support at this time">
+            <label class="govuk-label govuk-radios__label" for="extra-support-2">
+              No - I do not need any support at this time
+            </label>
+          </div>
+          </div>
+
+      </fieldset>
+    </div>
+
+    <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+      Save and continue
+    </button>
+
+    <button class="govuk-button govuk-button--secondary" type="button" data-module="govuk-button" onclick="window.location.href='/et3-research/saved';">
+      Save as draft
+    </button>
+    </div>
+  </form>
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="respondent-name-the-tribunal"> Contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}

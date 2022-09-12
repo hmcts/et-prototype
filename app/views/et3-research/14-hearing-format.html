@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form action="15-extra-support" method="post">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+    <span class="govuk-caption-xl">Respondent information</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Hearing format</h1>
+
+    <p class="govuk-body">If this case goes to a hearing, it can take place either:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>in person, in a room at a tribunal (‘face-to-face’)</li>
+      <li>by video (where you can join from a place suitable to you)</li>
+      <li>by phone</li>
+    </ul>
+    <p class="govuk-body">Some hearings use a combination of these methods. The approach taken will be decided by a judge. It may depend on the type of claim.</p>
+
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="hearings-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Would you be able to take part in hearings by video and phone?
+            </h1>
+          </legend>
+          <div id="hearings-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="hearings" name="hearings" type="checkbox" value="Yes, I can take part in video hearings">
+              <label class="govuk-label govuk-checkboxes__label" for="hearings">
+                Yes, I can take part in video hearings
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="hearings-2" name="hearings" type="checkbox" value="Yes, I can take part in phone hearings">
+              <label class="govuk-label govuk-checkboxes__label" for="hearings-2">
+                Yes, I can take part in phone hearings
+              </label>
+            </div>
+            <div class="govuk-checkboxes__divider">or</div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="hearings-5" name="hearings" type="checkbox" value="No, I cannot take part in either video or phone hearings" data-behaviour="exclusive" data-aria-controls="conditional-hearings-5">
+              <label class="govuk-label govuk-checkboxes__label" for="hearings-5">
+                No, I cannot take part in either video or phone hearings
+              </label>
+            </div>
+
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-hearings-5">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="hearings-reason">
+                Explain why you are unable to take part in video or phone hearings.
+              </label>
+              <textarea class="govuk-textarea govuk-!-width-full" rows="4" id="hearings-reason" name="hearings-reason"></textarea>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+    <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+      Save and continue
+    </button>
+
+    <button class="govuk-button govuk-button--secondary" type="button" data-module="govuk-button" onclick="window.location.href='/et3-research/saved';">
+      Save as draft
+    </button>
+    </div>
+  </form>
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="respondent-name-the-tribunal"> Contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}

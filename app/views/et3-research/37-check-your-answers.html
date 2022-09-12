@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form action="38-check-your-answers" method="post">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+
+    <h1 class="govuk-heading-xl">Check your answers</h1>
+    <h2 class="govuk-heading-m">Employer's contract claim</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Does the respondent wish to make an Employer’s Contract Claim?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['ECC'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="35-contract-claim">
+            Change<span class="govuk-visually-hidden"> contract claim</span>
+          </a>
+        </dd>
+      </div>
+      {% if data['ECC'] === 'Yes' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Provide the background and details of your Employer’s Contract Claim
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['ECC-details'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="35-contract-claim-details">
+            Change<span class="govuk-visually-hidden"> contract claim</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Supporting material
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['file-upload-2'] %}
+          <a href="#">{{ data['file-upload-2'] }}</a>
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="35-contract-claim-details">
+            Change<span class="govuk-visually-hidden"> contesting the claim</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+    </dl>
+
+    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Have you completed this section?
+        </h1>
+      </legend>
+      <div id="employer-details-completed" class="govuk-hint">
+        You can change your answers later.
+      </div>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="pay-benefits-completed" name="pay-benefits-completed" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="pay-benefits-completed">
+            Yes, I've completed this section
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="pay-benefits-completed-2" name="pay-benefits-completed" type="radio" value="No">
+          <label class="govuk-label govuk-radios__label" for="pay-benefits-completed-2">
+            No, I'll come back later
+          </label>
+        </div>
+      </div>
+  </fieldset>
+
+    <div class="govuk-button-group govuk-!-margin-top-7">
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+      Save and continue
+    </button>
+
+    <button class="govuk-button govuk-button--secondary" type="button" data-module="govuk-button" onclick="window.location.href='/et3-research/saved';">
+      Save as draft
+    </button>
+    </div>
+  </form>
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="respondent-name-the-tribunal"> Contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}

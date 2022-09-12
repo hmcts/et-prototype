@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form action="26-check-your-answers" method="post">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <span class="govuk-caption-l">Claimant information</span>
+            <h1 class=" govuk-heading-l">
+              Claimant average weekly work hours
+            </h1>
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Average weekly work hours provided on ET1
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  37.5
+                </dd>
+              </div>
+            </dl>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+               <h2 class="govuk-fieldset__heading">
+                 Are the claimant’s average weekly work hours correct?
+               </h2>
+             </legend>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="claimant-work-hours" name="claimant-work-hours" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="claimant-work-hours">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="claimant-work-hours-2" name="claimant-work-hours" type="radio" value="No" data-aria-controls="conditional-work-hours">
+              <label class="govuk-label govuk-radios__label" for="claimant-work-hours-2">
+                No
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-hours">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="correct-work-hours">
+                  <b>What are the claimant’s correct average weekly work hours? (optional)</b>
+                </label>
+                <div id="correct-work-hours-hint" class="govuk-hint">
+                  Enter the claimant’s average hours worked each week in digits.
+                </div>
+                <input class="govuk-input govuk-!-width-full" id="correct-work-hours" name="correct-work-hours"></textarea>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="claimant-work-hours-3" name="claimant-work-hours" type="radio" value="Not sure">
+              <label class="govuk-label govuk-radios__label" for="claimant-work-hours-3">
+                Not sure
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+    <div class="govuk-button-group govuk-!-margin-top-8">
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+      Save and continue
+    </button>
+
+    <button class="govuk-button govuk-button--secondary" type="button" data-module="govuk-button" onclick="window.location.href='/et3-research/saved';">
+      Save as draft
+    </button>
+    </div>
+  </form>
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="respondent-name-the-tribunal"> Contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}
