@@ -24,7 +24,7 @@
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-    <form action="12-contact-phone-number" method="post">
+    <form action="13-check-your-answers" method="post">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
     <span class="govuk-caption-l">Respondent information</span>
     <h1 class="govuk-heading-l">Respondent contact preferences</h1>
@@ -62,6 +62,23 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+          Contact phone number (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['contact-number'] %}
+          {{ data['contact-number'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="10-DX-address">
+            Change<span class="govuk-visually-hidden"> DX address</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Email address
         </dt>
         <dd class="govuk-summary-list__value">
@@ -76,7 +93,7 @@
     </dl>
 
     <p class="govuk-body">Normally the tribunal will contact you by email. If you need contact by post, you must explain why.</p>
-    <p class="govuk-body">To change your email address, <a class="govuk-link govuk-link--no-visited-state" href="#">contact the tribunal (opens in new tab)</a>.
+    <p class="govuk-body">To change your email address, <a class="govuk-link govuk-link--no-visited-state" target=”_blank” href="contact-the-tribunal">contact the tribunal (opens in new tab)</a>.
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
