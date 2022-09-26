@@ -1,0 +1,277 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <a href="overview-2" class="govuk-back-link" style="margin-top: -10px">Back</a>
+    <h1 class="govuk-heading-xl">Your response form (ET3)</h1>
+    <p class="govuk-body">To help you complete this, open the:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-body govuk-link--no-visited-state" target="_blank" href="/public/documents/Acas-certificate.pdf">Acas certificate (opens in new tab)</a></li>
+        <li><a class="govuk-body govuk-link--no-visited-state" target="_blank" href="/public/documents/ET1-Redde-Ltd-2.pdf">ET1 claim form (opens in new tab)</a></li>
+      </ul>
+
+    <div class="govuk-inset-text">
+      If you do not provide a response, a judgment may be issued against you without a hearing.<br><br>
+      If you consider another person or company may be liable, you should still submit a response. You will have a chance in this response to explain why you think someone else may be liable.
+    </div>
+
+
+
+      <ol class="app-task-list">
+      <!-- Respondent information -->
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Tell us about the respondent
+          </h2>
+          <ul class="app-task-list__items">
+
+            {% if not data['employer-details-completed'] %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link govuk-link--no-visited-state" href="03-registered-name" aria-describedby="Employer-contact-details-status">
+                  Contact details
+                </a>
+              </span>
+              {% if data['respondent-name'] %}
+              <strong class="govuk-tag app-task-list__tag govuk-tag--yellow dashboard-tags" id="Employer-contact-details-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag app-task-list__tag govuk-tag--red dashboard-tags" id="Employer-contact-details-status">Not started yet</strong>
+              {% endif %}
+            </li>
+            {% else %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link govuk-link--no-visited-state" href="13-check-your-answers" aria-describedby="Employer-contact-details-status">
+                  Contact details
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag govuk-tag--green dashboard-tags" id="Employer-contact-details-status">Completed</strong>
+            </li>
+            {% endif %}
+
+            {% if not data['hearing-workforce-completed'] %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link govuk-link--no-visited-state" href="14-hearing-format" aria-describedby="hearing-and-workforce-status">
+                  Hearing format and employer details
+                </a>
+              </span>
+              {% if data['hearings'] %}
+              <strong class="govuk-tag govuk-tag--yellow app-task-list__tag dashboard-tags" id="hearing-and-workforce-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--red app-task-list__tag dashboard-tags" id="hearing-and-workforce-status">Not started yet</strong>
+              {% endif %}
+            </li>
+            {% else %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link govuk-link--no-visited-state" href="19-check-your-answers" aria-describedby="hearing-and-workforce-status">
+                  Hearing format and employer details
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--green app-task-list__tag dashboard-tags" id="hearing-and-workforce-status">Completed</strong>
+            </li>
+            {% endif %}
+          </ul>
+        </li>
+
+        <!-- Claimant information -->
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Tell us about the claimant
+          </h2>
+          <ul class="app-task-list__items">
+            {% if not data['early-conciliation-completed'] %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link--no-visited-state" href="20-acas" aria-describedby="early-conciliation-status">
+                  Early conciliation and employee details
+                </a>
+              </span>
+              {% if data['acas-details'] %}
+              <strong class="govuk-tag govuk-tag--yellow app-task-list__tag dashboard-tags" id="early-conciliation-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--red app-task-list__tag dashboard-tags" id="early-conciliation-status">Not started yet</strong>
+              {% endif %}
+            </li>
+            {% else %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link--no-visited-state" href="26-check-your-answers" aria-describedby="early-conciliation-status">
+                  Early conciliation and employee details
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--green app-task-list__tag dashboard-tags" id="early-conciliation-status">Completed</strong>
+            </li>
+            {% endif %}
+
+            {% if not data['pay-benefits-completed'] %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link--no-visited-state" href="27-claimant-pay" aria-describedby="pay-pension-benefits-status">
+                  Pay, pension and benefits
+                </a>
+              </span>
+              {% if data['claimant-pay'] %}
+              <strong class="govuk-tag govuk-tag--yellow dashboard-tags app-task-list__tag" id="pay-pension-benefits-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--red dashboard-tags app-task-list__tag" id="pay-pension-benefits-status">Not started yet</strong>
+              {% endif %}
+            </li>
+            {% else %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link--no-visited-state" href="31-check-your-answers" aria-describedby="pay-pension-benefits-status">
+                  Pay, pension and benefits
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--green dashboard-tags app-task-list__tag" id="pay-pension-benefits-status">Completed</strong>
+            </li>
+            {% endif %}
+          </ul>
+        </li>
+
+        <!-- Response details -->
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Give us your response
+          </h2>
+          <ul class="app-task-list__items">
+            {% if not data['contesting-claim-completed'] %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link--no-visited-state" href="32-contesting" aria-describedby="contesting-the-claim-status">
+                  Contest the claim
+                </a>
+              </span>
+              {% if data['contest'] %}
+              <strong class="govuk-tag dashboard-tags govuk-tag--yellow app-task-list__tag" id="contesting-the-claim-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag dashboard-tags govuk-tag--red app-task-list__tag" id="contesting-the-claim-status">Not started yet</strong>
+              {% endif %}
+            </li>
+            {% else %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link--no-visited-state" href="34-check-your-answers" aria-describedby="contesting-the-claim-status">
+                  Contest the claim
+                </a>
+              </span>
+              <strong class="govuk-tag dashboard-tags govuk-tag--green app-task-list__tag" id="contesting-the-claim-status">Completed</strong>
+            </li>
+            {% endif %}
+
+            {% if not data['employer-contract-claim-completed'] %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link--no-visited-state" href="35-contract-claim" aria-describedby="ECC-status">
+                  Employer's Contract Claim
+                </a>
+              </span>
+              {% if data['ECC'] %}
+              <strong class="govuk-tag dashboard-tags govuk-tag--yellow app-task-list__tag" id="ECC-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag dashboard-tags govuk-tag--red app-task-list__tag" id="ECC-status">Not started yet</strong>
+              {% endif %}
+            </li>
+            {% else %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link--no-visited-state" href="37-check-your-answers" aria-describedby="ECC-status">
+                  Employer's Contract Claim
+                </a>
+              </span>
+              <strong class="govuk-tag dashboard-tags govuk-tag--green app-task-list__tag" id="ECC-status">Completed</strong>
+            </li>
+            {% endif %}
+
+          </ul>
+        </li>
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Check and submit your response
+          </h2>
+          <ul class="app-task-list__items">
+          {% if data['employer-details-completed'] and data['hearing-workforce-completed'] and data['early-conciliation-completed'] and data['pay-benefits-completed'] and data['contesting-claim-completed'] and data['employer-contract-claim-completed'] %}
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a class="govuk-link--no-visited-state" href="38-check-your-answers" aria-describedby="check-status">
+                  Check your answers</a>
+                </span>
+                <strong class="govuk-tag govuk-tag--red app-task-list__tag dashboard-tags" id="check-status">Not started yet</strong>
+              </li>
+            {% else %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Check your answers
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag dashboard-tags" id="check-status">Cannot start yet</strong>
+            </li>
+            {% endif %}
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="contact-the-tribunal"> contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}

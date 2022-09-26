@@ -1,0 +1,589 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <form action="39-submitted" method="post">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+
+    <h1 class="govuk-heading-xl">Your response form (ET3)</h1>
+    <h2 class="govuk-heading-m">Employer and contact details</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Registered name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['respondent-name'] === 'No' %}
+          {{ data['respondent-name-corrected'] }}
+          {% elseif data['respondent-name'] === 'Yes' %}
+          Redde Ltd
+          {% endif %}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What type of employer are you?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['employer-type'] }}
+        </dd>
+
+      </div>
+
+      {% if data['employer-type'] === 'Individual' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Preferred title (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['preferred-title'] }}
+        </dd>
+
+      </div>
+      {% endif %}
+
+      {% if data['employer-type'] === 'Limited company' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Company number (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['company-number'] }}
+        </dd>
+
+      </div>
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['respondent-correct-address'] === 'Yes' %}
+          53-79 Highgate Road, Kentish Town, London, NW5 1TL
+          {% else %}
+          {{ data['respondent-address'] }}
+          {% endif %}
+        </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name of preferred contact at the respondent’s address (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['preferred-contact'] %}
+          {{ data['preferred-contact'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          DX address (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['DX-address'] %}
+          {{ data['DX-address'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How would you prefer to be contacted?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['contact'] }}
+        </dd>
+
+      </div>
+
+      {% if data['contact'] === 'Post' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Provide a reason why you have selected post
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['contact-by-post'] }}
+        </dd>
+
+      </div>
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What language would you like to be contacted in?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['language'] }}
+        </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Contact number (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['contact-number'] %}
+          {{ data['contact-number'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+
+      </div>
+    </dl>
+
+    <!-- Hearing and workforce -->
+    <h2 class="govuk-heading-m">Hearing and workforce</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Would you be able to take part in hearings by video and phone?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['hearings'] }}
+        </dd>
+
+      </div>
+
+    {% if data['hearings'] === 'No, I cannot take part in either video or phone hearings' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Explain why you are unable to take part in video or phone hearings
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['hearings-reason'] }}
+        </dd>
+
+      </div>
+    {% endif %}
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Do you have a physical, mental or learning disability or health condition that means you need support during your case?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['extra-support'] }}
+      </dd>
+
+    </div>
+
+    {% if data['extra-support'] === 'Yes' %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Tell us what support you need to request
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['extra-support-details'] }}
+      </dd>
+
+    </div>
+    {% endif %}
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        How many people does the respondent employ in Great Britain? (optional)
+      </dt>
+      <dd class="govuk-summary-list__value">
+      {% if data['number-of-employees'] %}
+      {{ data['number-of-employees'] }}
+      {% else %}
+      Not provided
+      {% endif %}
+      </dd>
+
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Does the respondent have more than one site in Great Britain?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['respondent-sites'] }}
+      </dd>
+
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        How many employed at the site the claimant worked at? (optional)
+      </dt>
+      <dd class="govuk-summary-list__value">
+      {% if data['employees-at-site'] %}
+      {{ data['employees-at-site'] }}
+      {% else %}
+      Not provided
+      {% endif %}
+      </dd>
+
+    </div>
+    </dl>
+
+
+    <!-- Early conciliation and employee details -->
+    <h2 class="govuk-heading-m">Early conciliation and employee details</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you agree with the details given by the claimant about early conciliation with Acas?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['acas-details'] }}
+        </dd>
+
+      </div>
+
+      {% if data['acas-details'] === 'No' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why do you disagree with the Acas conciliation details given? (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['acas-details-details'] %}
+          {{ data['acas-details-details'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+
+      </div>
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are the dates of employment given by the claimant correct?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['claimant-employee-dates'] }}
+        </dd>
+
+      </div>
+
+      {% if data['claimant-employee-dates'] === 'No' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Employment start date (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['start-date-day'] %}
+          {{ data['start-date-day'] }} {{ data['start-date-month'] }} {{ data['start-date-year'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+
+      </div>
+      {% endif %}
+
+      {% if data['claimant-employee-dates'] === 'No' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Employment end date (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['end-date-day'] %}
+          {{ data['end-date-day'] }} {{ data['end-date-month'] }} {{ data['end-date-year'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+
+      </div>
+      {% endif %}
+
+      {% if data['claimant-employee-dates'] === 'No' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you want to provide any further information about the claimant's employment dates? (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['employment-dates-detail'] %}
+          {{ data['employment-dates-detail'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+
+      </div>
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is the claimant’s employment with the respondent continuing?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['employment-continuing'] }}
+        </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Is the claimant’s job title correct?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['claimant-job-title'] }}
+        </dd>
+
+      </div>
+
+      {% if data['claimant-job-title'] === 'No' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What is or was the claimant’s correct job title? (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+        {% if data['correct-job-title'] %}
+          {{ data['correct-job-title'] }}
+        {% else %}
+        Not provided
+        {% endif %}
+        </dd>
+
+      </div>
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Are the claimant’s average weekly work hours correct?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['claimant-work-hours'] }}
+        </dd>
+
+      </div>
+
+      {% if data['claimant-work-hours'] === 'No' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What are the claimant’s correct average weekly work hours? (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+        {% if data['correct-work-hours'] %}
+          {{ data['correct-work-hours'] }}
+        {% else %}
+        Not provided
+        {% endif %}
+        </dd>
+
+      </div>
+      {% endif %}
+    </dl>
+
+    <!-- Pay, Pension, Benefits -->
+    <h2 class="govuk-heading-m">Pay, pension and benefits</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are the pay details given by the claimant correct?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['claimant-pay'] }}
+        </dd>
+
+      </div>
+
+      {% if data['claimant-pay'] === 'No' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            How often was the claimant paid?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['claimant-pay-frequency'] }}
+          </dd>
+
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Claimant’s pay BEFORE tax (optional)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['pay-before-tax'] %}
+            {{ data['pay-before-tax'] }}
+            {% else %}
+            Not provided
+            {% endif %}
+          </dd>
+
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Claimant’s pay AFTER tax (optional)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['pay-after-tax'] %}
+            {{ data['pay-after-tax'] }}
+            {% else %}
+            Not provided
+            {% endif %}
+          </dd>
+
+        </div>
+        {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are the claimant’s notice period details correct?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['claimant-notice'] }}
+        </dd>
+
+      </div>
+
+      {% if data['claimant-notice'] === 'No' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What are the claimant’s correct notice details? (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['correct-claimant-notice'] %}
+          {{ data['correct-claimant-notice'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+
+      </div>
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are the claimants pension and benefits details correct?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['claimant-pension'] }}
+        </dd>
+
+      </div>
+
+      {% if data['claimant-pension'] === 'No' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What are the claimant’s correct pension and benefits details? (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['correct-claimant-pension'] %}
+          {{ data['correct-claimant-pension'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+
+      </div>
+      {% endif %}
+    </dl>
+
+    <!-- Contesting the claim -->
+    <h2 class="govuk-heading-m">Contesting the claim</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Does Redde Limited contest the claim?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['contest'] }}
+        </dd>
+
+      </div>
+      {% if data['contest'] === 'Yes' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Explain why Redde Limited contests the claim
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['contestation'] }}
+        </dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Supporting material
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['file-upload-1'] %}
+          <a href="#">{{ data['file-upload-1'] }}</a>
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+
+      </div>
+      {% endif %}
+    </dl>
+
+    <!-- Employer's Contract Claim -->
+    <h2 class="govuk-heading-m">Employer's contract claim</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Does the respondent wish to make an Employer’s Contract Claim?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['ECC'] }}
+        </dd>
+
+      </div>
+      {% if data['ECC'] === 'Yes' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Provide the background and details of your Employer’s Contract Claim
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['ECC-details'] }}
+        </dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Supporting material
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['file-upload-2'] %}
+          <a href="#">{{ data['file-upload-2'] }}</a>
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+
+      </div>
+      {% endif %}
+    </dl>
+
+
+
+{% endblock %}
