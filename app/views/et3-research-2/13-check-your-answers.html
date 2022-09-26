@@ -1,0 +1,289 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form action="14-hearing-format" method="post">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+
+    <h1 class="govuk-heading-xl">Check your answers</h1>
+    <h2 class="govuk-heading-m">Contact details</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Respondent name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['respondent-name'] === 'No' %}
+          {{ data['respondent-name-corrected'] }}
+          {% elseif data['respondent-name'] === 'Yes' %}
+          Redde Ltd
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="03-registered-name">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What type of organisation is the respondent?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['employer-type'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="04-employer-type">
+            Change<span class="govuk-visually-hidden"> employer type</span>
+          </a>
+        </dd>
+      </div>
+
+      {% if data['employer-type'] === 'Individual' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Preferred title (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['preferred-title'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="04-employer-type">
+            Change<span class="govuk-visually-hidden"> company number</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if data['employer-type'] === 'Limited company' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Company number (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['company-number'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="04-employer-type">
+            Change<span class="govuk-visually-hidden"> company number</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['respondent-correct-address'] === 'Yes' %}
+          53-79 Highgate Road, Kentish Town, London, NW5 1TL
+          {% else %}
+          {{ data['respondent-address'] }}
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="05-respondent-address">
+            Change<span class="govuk-visually-hidden"> address</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name of preferred contact at the respondent’s address (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['preferred-contact'] %}
+          {{ data['preferred-contact'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="09-contact-name">
+            Change<span class="govuk-visually-hidden"> contact name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          DX address (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['DX-address'] %}
+          {{ data['DX-address'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="10-DX-address">
+            Change<span class="govuk-visually-hidden"> dx address</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How would you prefer to be contacted?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['contact'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="11-contact-preferences">
+            Change<span class="govuk-visually-hidden"> preferred contact method</span>
+          </a>
+        </dd>
+      </div>
+
+      {% if data['contact'] === 'Post' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Provide a reason why you have selected post
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['contact-by-post'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="11-contact-preferences">
+            Change<span class="govuk-visually-hidden"> post reason</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What language would you like to be contacted in?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['language'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="11-contact-preferences">
+            Change<span class="govuk-visually-hidden"> language</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Contact number (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['contact-number'] %}
+          {{ data['contact-number'] }}
+          {% else %}
+          Not provided
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="12-contact-phone-number">
+            Change<span class="govuk-visually-hidden"> contact phone number</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Have you completed this section?
+        </h1>
+      </legend>
+      <div id="employer-details-completed" class="govuk-hint">
+        You can change your answers later.
+      </div>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="employer-details-completed" name="employer-details-completed" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="employer-details-completed">
+            Yes, I've completed this section
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="employer-details-completed-2" name="employer-details-completed" type="radio" value="No">
+          <label class="govuk-label govuk-radios__label" for="employer-details-completed-2">
+            No, I'll come back later
+          </label>
+        </div>
+      </div>
+  </fieldset>
+
+    <div class="govuk-button-group govuk-!-margin-top-7">
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+      Save and continue
+    </button>
+
+    <button class="govuk-button govuk-button--secondary" type="button" data-module="govuk-button" onclick="window.location.href='/et3-research-2/saved';">
+      Save as draft
+    </button>
+    </div>
+  </form>
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="respondent-name-the-tribunal"> Contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}
