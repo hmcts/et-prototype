@@ -67,7 +67,11 @@
                   Contact details
                 </a>
               </span>
+              {% if data['employer-details-completed'] === 'Yes' %}
               <strong class="govuk-tag app-task-list__tag govuk-tag--green dashboard-tags" id="Employer-contact-details-status">Completed</strong>
+              {% else %}
+              <strong class="govuk-tag app-task-list__tag govuk-tag--yellow dashboard-tags" id="Employer-contact-details-status">In progress</strong>
+              {% endif %}
             </li>
             {% endif %}
 
@@ -91,7 +95,11 @@
                   Hearing format and employer details
                 </a>
               </span>
+              {% if data['hearing-workforce-completed'] === 'Yes' %}
               <strong class="govuk-tag govuk-tag--green app-task-list__tag dashboard-tags" id="hearing-and-workforce-status">Completed</strong>
+              {% else %}
+              <strong class="govuk-tag app-task-list__tag govuk-tag--yellow dashboard-tags" id="hearing-and-workforce-status">In progress</strong>
+              {% endif %}
             </li>
             {% endif %}
           </ul>
@@ -123,7 +131,11 @@
                   Early conciliation and employee details
                 </a>
               </span>
+              {% if data['early-conciliation-completed'] === 'Yes' %}
               <strong class="govuk-tag govuk-tag--green app-task-list__tag dashboard-tags" id="early-conciliation-status">Completed</strong>
+              {% else %}
+              <strong class="govuk-tag app-task-list__tag govuk-tag--yellow dashboard-tags" id="early-conciliation-status">In progress</strong>
+              {% endif %}
             </li>
             {% endif %}
 
@@ -147,7 +159,11 @@
                   Pay, pension and benefits
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--green dashboard-tags app-task-list__tag" id="pay-pension-benefits-status">Completed</strong>
+              {% if data['pay-benefits-completed'] === 'Yes' %}
+              <strong class="govuk-tag govuk-tag--green app-task-list__tag dashboard-tags" id="pay-pension-benefits-status">Completed</strong>
+              {% else %}
+              <strong class="govuk-tag app-task-list__tag govuk-tag--yellow dashboard-tags" id="pay-pension-benefits-status">In progress</strong>
+              {% endif %}
             </li>
             {% endif %}
           </ul>
@@ -179,7 +195,11 @@
                   Contest the claim
                 </a>
               </span>
-              <strong class="govuk-tag dashboard-tags govuk-tag--green app-task-list__tag" id="contesting-the-claim-status">Completed</strong>
+              {% if data['contesting-claim-completed'] === 'Yes' %}
+              <strong class="govuk-tag govuk-tag--green app-task-list__tag dashboard-tags" id="contesting-the-claim-status">Completed</strong>
+              {% else %}
+              <strong class="govuk-tag app-task-list__tag govuk-tag--yellow dashboard-tags" id="contesting-the-claim-status">In progress</strong>
+              {% endif %}
             </li>
             {% endif %}
 
@@ -203,7 +223,11 @@
                   Employer's Contract Claim
                 </a>
               </span>
-              <strong class="govuk-tag dashboard-tags govuk-tag--green app-task-list__tag" id="ECC-status">Completed</strong>
+              {% if data['employer-contract-claim-completed'] === 'Yes' %}
+              <strong class="govuk-tag govuk-tag--green app-task-list__tag dashboard-tags" id="ECC-status">Completed</strong>
+              {% else %}
+              <strong class="govuk-tag app-task-list__tag govuk-tag--yellow dashboard-tags" id="ECC-status">In progress</strong>
+              {% endif %}
             </li>
             {% endif %}
 
