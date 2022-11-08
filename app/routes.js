@@ -276,5 +276,4 @@ router.post('/restrict-submitted-rule92', function (req, res) {
 
 
 
-
 module.exports = router
