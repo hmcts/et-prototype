@@ -50,6 +50,56 @@
             </tr>
           </tbody>
         </table>
+
+        {% elseif data['judgment-details'] %}
+        <h1 class="govuk-heading-l">Application to reconsider a judgment</h1>
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Applicant</th>
+              <td class="govuk-table__cell">Claimant</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Application type</th>
+              <td class="govuk-table__cell">Application for a judgment to be reconsidered</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">What do you want to tell the tribunal?</th>
+              <td class="govuk-table__cell">{{ data['judgment-details'] }}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Do you want to copy this correspondence to the other party to satisfy the Rules of Procedure?</th>
+              <td class="govuk-table__cell">
+                {% if data['rule-92'] === 'Yes, I confirm I want to copy this correspondence to the other party to satisfy the Employment Tribunal Rules of Procedure. By selecting this option, a copy of this correspondence will be sent to the other party upon submission. The other party will be notified that any objections to your application should be sent to the tribunal as soon as possible and in any event within 7 days.' %} Yes, I confirm I want to copy this correspondence to the other party to satisfy the Employment Tribunal Rules of Procedure. By selecting this option, a copy of this correspondence will be sent to the other party upon submission. The other party will be notified that any objections to your application should be sent to the tribunal as soon as possible and in any event within 7 days. {% endif %}
+                {% if data['rule-92'] === 'No, I do not want to copy this correspondence to the other party.' %} No, I do not want to copy this correspondence to the other party. {% endif %}</td>
+            </tr>
+          </tbody>
+        </table>
+        {% elseif data['something-details'] %}
+
+        <h1 class="govuk-heading-l">Application to contact the tribunal</h1>
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Applicant</th>
+              <td class="govuk-table__cell">Claimant</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Application type</th>
+              <td class="govuk-table__cell">Contact the tribunal</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">What do you want to tell the tribunal?</th>
+              <td class="govuk-table__cell">{{ data['something-details'] }}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Do you want to copy this correspondence to the other party to satisfy the Rules of Procedure?</th>
+              <td class="govuk-table__cell">
+                {% if data['rule-92'] === 'Yes, I confirm I want to copy this correspondence to the other party to satisfy the Employment Tribunal Rules of Procedure. By selecting this option, a copy of this correspondence will be sent to the other party upon submission. The other party will be notified that any objections to your application should be sent to the tribunal as soon as possible and in any event within 7 days.' %} Yes, I confirm I want to copy this correspondence to the other party to satisfy the Employment Tribunal Rules of Procedure. By selecting this option, a copy of this correspondence will be sent to the other party upon submission. The other party will be notified that any objections to your application should be sent to the tribunal as soon as possible and in any event within 7 days. {% endif %}
+                {% if data['rule-92'] === 'No, I do not want to copy this correspondence to the other party.' %} No, I do not want to copy this correspondence to the other party. {% endif %}</td>
+            </tr>
+          </tbody>
+        </table>
         {% endif %}
 </div>
 
