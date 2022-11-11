@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="overview-1-viewed" class="govuk-back-link">Back</a>
+    <span class="govuk-caption-xl">Vary or revoke an order</span>
+    <h1 class="govuk-heading-xl">Apply to vary or revoke an order</h1>
+    <form action="7-vary-R92" method="post">
+    <p class="govuk-body">Use this form to apply to vary or revoke an order the tribunal has issued.</p>
+    <p class="govuk-body">Tribunal orders will not usually be varied or revoked unless there has been a material change in circumstances since the order was made, which make the variation in the interests of justice.</p>
+    <p class="govuk-body">The tribunal will consider your reasons for varying or revoking the order and any supporting materials you provide then make a decision.</p>
+    <h2 class='govuk-heading-s'>Details to include in your application:</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the order you want to vary or revoke</li>
+        <li>the date the tribunal issued the order</li>
+        <li>explain which part of the order you want to vary or revoke</li>
+        <li>how to vary the order. For example, you might say that a case management order asked for an impact statement but you need more time to submit it</p>
+        <li>why it is in the interests of justice to vary or revoke this order. Tell us any relevant changes of circumstance since the order was made and consider the requirements of the ‘overriding objective’ in Rule 2 of the Employment Tribunal Rules of Procedure</li>
+      </ul>
+    <h2 class='govuk-heading-s'>Rule 2 of the Employment Tribunal Rules of Procedure</h2>
+    <p class="govuk-body">The overriding objective of the Rules is to enable employment tribunals to deal with cases fairly and justly.</p>
+    <p class="govuk-body">Dealing with a case fairly and justly includes:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>ensuring that the parties are on an equal footing</li>
+      <li>dealing with cases in ways which are proportionate to the complexity and importance of the issues</li>
+      <li>avoiding unnecessary formality and seeking flexibility in the proceedings</li>
+      <li>avoiding delay, so far as compatible with proper consideration of the issues</li>
+      <li>saving expense</li>
+    </ul>
+
+    <h2 class='govuk-heading-s'>Upload letters, photos or documents if they are relevant to your application. Do not upload any other material. </h2>
+    <p class="govuk-body">Remember that:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>if you are taking a picture of a letter, place it on a flat surface and take the picture from above</li>
+      <li>if you are uploading written documents with tracked changes, make sure that tracked changes are turned on</li>
+      <li>you can make more than one application at the same time by completing each form separately. If the applications are linked you can make that clear in the text box</li>
+    </ul>
+
+      <div id="vary-hint" class="govuk-hint">
+        Give details of your application. Please state which respondent or respondents your application applies to. Use both the box and the file upload if you need to.
+      </div>
+      <textarea class="govuk-textarea" id="vary-details" name="vary-details" rows="5" aria-describedby="vary-hint"></textarea>
+
+    <div class="govuk-inset-text">
+      <label class="govuk-label" for="file-upload-1">
+        Upload a file
+      </label>
+      <input class="govuk-file-upload" id="file-upload-1" name="vary-document" type="file"><br><br>
+      <button class="govuk-button govuk-button--secondary" onclick="fileFunction()" type="button" data-module="govuk-button">
+        Upload file
+      </button>
+    </div>
+
+  <div class="">
+    <table class="govuk-table govuk-!-width-full">
+    <caption class="govuk-table__caption govuk-table__caption--m">Files uploaded</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row" id="none" style="display: block;">
+          <td class="govuk-table__cell">No files uploaded</td>
+        </tr>
+        <tr class="govuk-table__row" id="file" style="display: none;">
+          <td class="govuk-table__cell">example.pdf</td>
+          <td class="govuk-table__cell"><a href="#">Remove</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="govuk-!-margin-top-6">
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+    Continue
+    </button>
+
+    <a href="#" class="govuk-body govuk-link--no-visited-state" style="padding: 25px;">Cancel</a>
+  </div>
+</form>
+</div>
+
+  <div class="govuk-grid-column-one-third govuk-!-margin-top-3">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="#"> contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<script>
+function fileFunction() {
+  var x = document.getElementById("none");
+  var y = document.getElementById("file");
+
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    y.style.display = "block";
+  }
+}
+</script>
+
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="overview-1-viewed" class="govuk-back-link">Back</a>
+    <span class="govuk-caption-xl">Reconsider a judgment</span>
+    <h1 class="govuk-heading-xl">Apply for a judgment to be reconsidered</h1>
+    <form action="7-judgment-R92" method="post">
+    <p class="govuk-body">Use this form to have a judgment made by a tribunal reconsidered. This may be a judgment made by a judge alone or by a judge sitting with non-legal members.</p>
+    <p class="govuk-body">If reconsideration is necessary in the interests of justice you can ask the tribunal to look at the judgment again.</p>
+    <p class="govuk-body">Only a judgment which finally determines an issue in your case can be reconsidered. This therefore excludes any decision that does not comprise a final determination of the claim, or part of a claim. If you wish to ask for a case management order to be varied or revoked, use the vary or revoke an order application.</p>
+    <p class="govuk-body">You can only ask the tribunal to reconsider a judgment within 14 days of the date the judgment was sent to you.</p>
+    <p class="govuk-body">If you want the tribunal to reconsider a judgment that was sent to you over 14 days ago you must explain why your application is late.</p>
+    <p class="govuk-body">A reconsideration application does not affect the time limit for appealing to the Employment Appeal Tribunal.</p>
+
+
+
+    <h2 class='govuk-heading-s'>Details to include in your application:</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the judgment you want reconsidered</li>
+        <li>the date the tribunal issued the judgment</li>
+        <li>your reason for a late application if the judgment was sent over 14 days ago</li>
+        <li>why it is in the interests of justice to reconsider this judgment</li>
+        <li>if the tribunal should vary or revoke the judgment</li>
+        <li>any additional information or material which the tribunal does not already have to support your application</li>
+      </ul>
+
+    <h2 class='govuk-heading-s'>Upload letters, photos or documents if they are relevant to your application. Do not upload any other material. </h2>
+    <p class="govuk-body">Remember that:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>if you are taking a picture of a letter, place it on a flat surface and take the picture from above</li>
+      <li>if you are uploading written documents with tracked changes, make sure that tracked changes are turned on</li>
+      <li>you can make more than one application at the same time by completing each form separately. If the applications are linked you can make that clear in the text box</li>
+    </ul>
+
+      <div id="judgment-hint" class="govuk-hint">
+        Give details of your application. Please state which respondent or respondents your application applies to. Use both the box and the file upload if you need to.
+      </div>
+      <textarea class="govuk-textarea" id="judgment-details" name="judgment-details" rows="5" aria-describedby="judgment-hint"></textarea>
+
+    <div class="govuk-inset-text">
+      <label class="govuk-label" for="file-upload-1">
+        Upload a file
+      </label>
+      <input class="govuk-file-upload" id="file-upload-1" name="judgment-document" type="file"><br><br>
+      <button class="govuk-button govuk-button--secondary" onclick="fileFunction()" type="button" data-module="govuk-button">
+        Upload file
+      </button>
+    </div>
+
+  <div class="">
+    <table class="govuk-table govuk-!-width-full">
+    <caption class="govuk-table__caption govuk-table__caption--m">Files uploaded</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row" id="none" style="display: block;">
+          <td class="govuk-table__cell">No files uploaded</td>
+        </tr>
+        <tr class="govuk-table__row" id="file" style="display: none;">
+          <td class="govuk-table__cell">example.pdf</td>
+          <td class="govuk-table__cell"><a href="#">Remove</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="govuk-!-margin-top-6">
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+    Continue
+    </button>
+
+    <a href="#" class="govuk-body govuk-link--no-visited-state" style="padding: 25px;">Cancel</a>
+  </div>
+</form>
+</div>
+
+  <div class="govuk-grid-column-one-third govuk-!-margin-top-3">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="#"> contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<script>
+function fileFunction() {
+  var x = document.getElementById("none");
+  var y = document.getElementById("file");
+
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    y.style.display = "block";
+  }
+}
+</script>
+
+{% endblock %}
