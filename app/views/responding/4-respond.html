@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="#" class="govuk-back-link">Back</a>
+
+    <form method="post" action="/responding-materials-answer">
+    <span class="govuk-caption-xl">Respond to an application</span>
+    <h1 class="govuk-heading-xl">Your response</h1>
+    <p class="govuk-body">The respondent has applied to postpone a hearing.</p>
+    <p class="govuk-body">If you have any objections or responses to their application you must send them to the tribunal as soon as possible and by <b>21 November 2022</b> at the latest.</p>
+
+    <p class="govuk-body">If you need more time to respond, you may request more time from the tribunal. If you do not respond or request more time to respond, the tribunal will consider the application without your response.</p>
+
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Applicant</th>
+          <td class="govuk-table__cell">Respondent</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Application date</th>
+          <td class="govuk-table__cell">14 November 2022</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Application type</th>
+          <td class="govuk-table__cell">Application to postpone a hearing</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">What do you want to tell the tribunal?</th>
+          <td class="govuk-table__cell">We need to postpone the hearing on the 1st December to give us more time to gather evidence.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Do you want to copy this correspondence to the other party to satisfy the Rules of Procedure?</th>
+          <td class="govuk-table__cell">
+          Yes, I confirm I want to copy this correspondence to the other party to satisfy the Employment Tribunal Rules of Procedure. By selecting this option, a copy of this correspondence will be sent to the other party upon submission. The other party will be notified that any objections to your application should be sent to the tribunal as soon as possible and in any event within 7 days.
+      </tr>
+      </tbody>
+    </table>
+
+    <h3 class="govuk-heading-s">Consider in your response:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>if you agree with the application or not</li>
+      <li>if you disagree, explain why</li>
+      <li>if you want to apply for a hearing to discuss your response</li>
+    </ul>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Search for legal help
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If you need legal help or advice before responding, use the Law Society to find legal professionals.<br><br>
+        <a href="#">Search for legal professionals in England and Wales (opens in new tab)</a><br><br>
+        <a href="#">Search for legal professionals in Scotland (opens in new tab)</a>
+      </div>
+    </details>
+    <h3 class="govuk-heading-m">What's your response to the respondent's application?</h3>
+        <label class="govuk-label" for="response-details">
+          Use this box to provide your answer or you can upload material at the next step.
+        </label>
+        <textarea class="govuk-textarea" id="response-details" name="response-details" rows="8"></textarea>
+
+      <fieldset class="govuk-fieldset" aria-describedby="supporting-material-hint">
+         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+           <h3 class="govuk-heading-m">
+             Supporting material
+           </h3>
+         </legend>
+         <div id="supporting-material-hint" class="govuk-hint">
+           Do you have any supporting material you want to provide?
+         </div>
+         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+           <div class="govuk-radios__item">
+             <input class="govuk-radios__input" id="supporting-material" name="supporting-material" type="radio" value="yes">
+             <label class="govuk-label govuk-radios__label" for="supporting-material">
+               Yes
+             </label>
+           </div>
+           <div class="govuk-radios__item">
+             <input class="govuk-radios__input" id="supporting-material-2" name="supporting-material" type="radio" value="no">
+             <label class="govuk-label govuk-radios__label" for="supporting-material-2">
+               No
+             </label>
+           </div>
+         </div>
+     </fieldset>
+
+     <div class="govuk-!-margin-top-6">
+       <button class="govuk-button" data-module="govuk-button">
+           Continue
+       </button>
+
+       <a href="#" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
+     </div>
+   </form>
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="#"> contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+{% endblock %}

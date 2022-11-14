@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,30 +23,38 @@
 {% block content %}
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
+    <form method="post" action="9-overview-2">
     <div class="govuk-grid-column-two-thirds">
-    <a href="4-overview-2" class="govuk-back-link" style="margin-top: -10px;">Back</a>
-    <h1 class="govuk-heading-l">All orders and requests</h1>
-
-        <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Date</th>
-            <th scope="col" class="govuk-table__header">Orders and requests</th>
-            <th scope="col" class="govuk-table__header">Status</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">14 November 2022</td>
-            <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="2-notification-orders">Considering claims together</a></td>
-            <td class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--red dashboard-tags" id="eligibility-status">Not viewed yet</strong></td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a> -->
+    <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          We have sent your application to the tribunal
+        </h1>
     </div>
 
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    {% if data['rule-92'] == 'No, I do not want to copy this correspondence to the other party.' %}
+    <p class="govuk-body">You have sent your response to the tribunal. <br><br>The tribunal will consider all correspondence and let you know what happens next.</p>
+    {% else %}
+    <p class="govuk-body">You have sent your response to the tribunal and copied it to the respondent.<br><br>
+                          The tribunal will consider all correspondence and let you know what happens next.
+    </p>
+    {% endif %}
+
+
+    <div class="govuk-button-group govuk-!-margin-top-7">
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+      Close and return to case overview
+    </button>
+
+    </div>
+
+      </div>
+    </form>
+
   <div class="govuk-grid-column-one-third">
-    <details class="govuk-details" data-module="govuk-details">
+    <!-- <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
           Contact
@@ -55,7 +63,7 @@
       <div class="govuk-details__text">
         Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
         <br><br>
-        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="5-contact-the-tribunal"> contact the tribunal directly</a>.
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="contact-the-tribunal"> contact the tribunal directly</a>.
         <br><br>
         <b>England & Wales</b>
         Telephone: 0300 123 1024
@@ -73,7 +81,7 @@
         The centre does not open on bank holidays.
         Find out about call charges (opens in new tab)
       </div>
-    </details>
+    </details> -->
   </div>
 
 <main class="govuk-main-wrapper">

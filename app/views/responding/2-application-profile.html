@@ -26,36 +26,38 @@
     <div class="govuk-grid-column-two-thirds">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
 
-      <form action="9-submitted" method="post">
-        <h1 class="govuk-heading-xl">Check your answers</h1>
+
+        <h1 class="govuk-heading-l">Application to postpone a hearing</h1>
         <table class="govuk-table">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Application type</th>
-              <td class="govuk-table__cell">Vary or revoke an order</td>
-              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="5-contact-the-tribunal"></td>
+              <th scope="row" class="govuk-table__header">Applicant</th>
+              <td class="govuk-table__cell">Respondent</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Details</th>
-              <td class="govuk-table__cell">{{ data['vary-details'] }}</td>
-              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="6-vary">Change</td>
+              <th scope="row" class="govuk-table__header">Application date</th>
+              <td class="govuk-table__cell">14 November 2022</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Application type</th>
+              <td class="govuk-table__cell">Application to postpone a hearing</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">What do you want to tell the tribunal?</th>
+              <td class="govuk-table__cell">We need to postpone the hearing on the 1st December to give us more time to gather evidence.</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Do you want to copy this correspondence to the other party to satisfy the Rules of Procedure?</th>
-              <td class="govuk-table__cell">{{ data['rule-92'] }}<br><br>{{data['rule-92-reason']}}</td>
-              <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="7-vary-R92">Change</td>
-            </tr>
+              <td class="govuk-table__cell">
+              Yes, I confirm I want to copy this correspondence to the other party to satisfy the Employment Tribunal Rules of Procedure. By selecting this option, a copy of this correspondence will be sent to the other party upon submission. The other party will be notified that any objections to your application should be sent to the tribunal as soon as possible and in any event within 7 days.
+          </tr>
           </tbody>
         </table>
 
-          <div class="govuk-!-margin-top-6">
-            <button class="govuk-button" data-module="govuk-button">
-                Submit
-            </button>
+        <button class="govuk-button" data-module="govuk-button" type="button" onclick="window.location.href='/responding/4-respond.html';">
+          Respond
+        </button>
 
-            <a href="#" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
-          </div>
-      </form>
 </div>
 
 
