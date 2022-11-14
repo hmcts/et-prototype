@@ -273,6 +273,21 @@ router.post('/restrict-submitted-rule92', function (req, res) {
       }
     })
 
+    router.post('/responding-materials-answer', function (req, res) {
+
+      // Make a variable and give it the value
+      var supportingMaterials = req.session.data['supporting-material']
+
+      // Check whether the variable matches a condition
+      if (supportingMaterials == "yes"){
+        // Send user to Supporting materials
+        res.redirect('/responding/5-supporting-materials')
+      } else {
+        // Send user to Rule 92
+        res.redirect('/responding/6-R92')
+      }
+    })
+
 
 
 

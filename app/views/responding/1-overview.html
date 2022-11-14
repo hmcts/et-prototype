@@ -24,7 +24,7 @@
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-xl">Case overview - Paul Smith & Others v Redde Ltd</h1>
+        <h1 class="govuk-heading-xl">Case overview - Pablo Jimenez v Redde Ltd</h1>
         <p class="govuk-body" style="margin-top: -45px">Case number 123456/2022</p>
       </div>
 {% endblock %}
@@ -34,7 +34,7 @@
 
 
       <div class="govuk-grid-column-two-thirds">
-        <hr class="overview-border govuk-!-margin-bottom-5">
+              <hr class="overview-border govuk-!-margin-bottom-5">
           <!-- Main body -->
           <div class="hmcts-progress-bar-vertical" role="progressbar">
           <ol class="hmcts-progress-bar__list">
@@ -70,8 +70,9 @@
               </div>
               <div class="govuk-notification-banner__content">
                 <p class="govuk-notification-banner__heading">
-                  The tribunal has sent you a notification. Considering claims together<br><br>
-                  <a class="govuk-notification-banner__link" href="4-group-notification">View the notification</a>
+                  The respondent has applied to postpone a hearing<br><br>
+                  <p class="govuk-body">If you have any objections or responses to their application you must send them to the tribunal as soon as possible and by <b>21 November 2022</b> at the latest.</p>
+                  <p class="govuk-body govuk-notification-banner__heading"><a class="govuk-notification-banner__link" href="2-application-profile">Respond to the application</a></p>
                 </p>
               </div>
             </div>
@@ -79,34 +80,60 @@
 
           <ol class="app-task-list">
             <li>
-            <!-- <p class="govuk-tag govuk-tag--grey">Case stayed</p> -->
               <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">Group claim case</span>
+                <span class="app-task-list__section-number"> About you</span>
               </h2>
               <ul class="app-task-list__items">
-              This group claim will progress according to the lead case.
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a class="govuk-link--no-visited-state" class="govuk-link--no-visited-state" href="4-overview-2" aria-describedby="  View your individual claim">
-                      View your individual claim
+                    <a class="govuk-link--no-visited-state" class="govuk-link--no-visited-state" href="#" aria-describedby="View and edit your personal details">
+                      View and edit your personal details
                     </a>
                   </span>
-                  <strong class="govuk-tag app-task-list__tag govuk-tag--blue" id="eligibility-status" style="text-transform: capitalize">Optional</strong>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--green" id="eligibility-status" style="text-transform: capitalize">Completed</strong>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">Your claim</span>
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a class="govuk-link--no-visited-state" href="#" aria-describedby="Your ET1 claim form">
+                      Your ET1 claim form
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--turquoise dashboard-tags" id="eligibility-status">Submitted</strong>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">The response</span>
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a class="govuk-link--no-visited-state" href="#" aria-describedby="Response from the respondent (ET3)">
+                      Response from the respondent (ET3)
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--turquoise dashboard-tags" id="eligibility-status">Viewed</strong>
                 </li>
               </ul>
             </li>
 
-
-
             <li>
               <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">Hearings</span>
+                <span class="app-task-list__section-number">Your hearings</span>
               </h2>
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a style="pointer-events: none; text-decoration: none" aria-describedby="  View details of the hearings">
-                      View details of the hearings
+                    <a style="pointer-events: none; text-decoration: none" aria-describedby="View details of your hearings">
+                      View details of your hearings
                     </a>
                   </span>
                   <strong class="govuk-tag app-task-list__tag govuk-tag--grey dashboard-tags" id="eligibility-status">Not available yet</strong>
@@ -121,28 +148,28 @@
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a style="pointer-events: none; text-decoration: none" aria-describedby="Claimant requests and applications">
-                      Claimant requests and applications
+                    <a style="pointer-events: none; text-decoration: none" aria-describedby="Your requests and applications">
+                      Your requests and applications
                     </a>
                   </span>
                   <strong class="govuk-tag app-task-list__tag govuk-tag--grey dashboard-tags" id="eligibility-status">Not available yet</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a style="pointer-events: none; text-decoration: none" aria-describedby="Respondent's requests">
+                    <a class="govuk-link--no-visited-state" href="3-applications" aria-describedby="Respondent's applications">
                       Respondent's applications
                     </a>
                   </span>
-                  <strong class="govuk-tag app-task-list__tag govuk-tag--grey dashboard-tags" id="eligibility-status">Not available yet</strong>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--red dashboard-tags" id="eligibility-status">Not started yet</strong>
                 </li>
-                <!-- <li class="app-task-list__item">
+                <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a class="govuk-link--no-visited-state" href="contact-the-tribunal" aria-describedby="Contact the tribunal about your case">
+                    <a class="govuk-link--no-visited-state" href="5-contact-the-tribunal" aria-describedby="Contact the tribunal about your case">
                       Contact the tribunal about your case
                     </a>
                   </span>
                   <strong class="govuk-tag app-task-list__tag govuk-tag--blue dashboard-tags" id="eligibility-status">Optional</strong>
-                </li> -->
+                </li>
               </ul>
             </li>
 
@@ -153,11 +180,11 @@
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a class="govuk-link--no-visited-state" href="4-group-orders" aria-describedby="All orders issued by the court">
+                    <a class="govuk-link--no-visited-state" href="13-orders" aria-describedby="All orders issued by the court">
                       All orders and requests from the tribunal
                     </a>
                   </span>
-                  <strong class="govuk-tag app-task-list__tag govuk-tag--red dashboard-tags" id="eligibility-status">Not viewed yet</strong>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--turquoise dashboard-tags" id="eligibility-status">Viewed</strong>
                 </li>
 
               </ul>
@@ -203,9 +230,9 @@
         <div class="govuk-grid-column-one-third">
           <div>
             <hr class="overview-border">
-            <!-- <h2 class="govuk-heading-s govuk-!-margin-top-4">I want to...</h2>
+            <h2 class="govuk-heading-s govuk-!-margin-top-4">I want to...</h2>
               <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="contact-the-tribunal">Contact the tribunal about my case</a><br><br>
+                <a class="govuk-link--no-visited-state" href="5-contact-the-tribunal">Contact the tribunal about my case</a><br><br>
                 <a class="govuk-link--no-visited-state" href="#">Find legal advice (opens in new tab)</a><br><br>
               </p>
 
@@ -236,7 +263,7 @@
                     The centre does not open on bank holidays.
                     <a class="govuk-link--no-visited-state" href="#">Find out about call charges (opens in new tab)</a>
                   </div>
-            </details> -->
+            </details>
           </div>
         </div>
       </div>

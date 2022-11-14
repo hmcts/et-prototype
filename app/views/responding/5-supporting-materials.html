@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 345px; white-space: nowrap">
+      English | <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="#" class="govuk-back-link">Back</a>
+
+    <form method="post" action="6-R92">
+    <span class="govuk-caption-xl">Respond to an application</span>
+    <h1 class="govuk-heading-xl">Provide supporting material</h1>
+
+    <h3 class="govuk-heading-s">Consider when providing material:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>you can upload letters, photos or documents to support your response</li>
+      <li>if you are taking a picture of a letter, place it ona  flat surface and take the picture from above</li>
+      <li>if you are uploading written documents with tracked changes, make sure that tracked changes are turned on</li>
+    </ul>
+
+        <label class="govuk-label" for="supporting-details">
+          Use this box to provide any supporting material. You can also upload a file if you wish.
+        </label>
+        <textarea class="govuk-textarea" id="suppporting-details" name="supporting-details" rows="8"></textarea>
+
+
+        <div class="govuk-inset-text">
+          <label class="govuk-label" for="file-upload-2">
+            Upload a file
+          </label>
+          <input class="govuk-file-upload" id="file-upload-2" name="respond-document" type="file"><br><br>
+          <button class="govuk-button govuk-button--secondary" onclick="fileFunction2()" type="button" data-module="govuk-button">
+            Upload file
+          </button>
+        </div>
+
+        <div class="">
+          <table class="govuk-table govuk-!-width-full">
+          <caption class="govuk-table__caption govuk-table__caption--m">Files uploaded</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row" id="none-2" style="display: block;">
+                <td class="govuk-table__cell">No files uploaded</td>
+              </tr>
+              <tr class="govuk-table__row" id="file-2" style="display: none;">
+                <td class="govuk-table__cell">example.pdf</td>
+                <td class="govuk-table__cell"><a href="#">Remove</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+     <div class="govuk-!-margin-top-6">
+       <button class="govuk-button" data-module="govuk-button">
+           Continue
+       </button>
+
+       <a href="#" class="govuk-body govuk-link--no-visited-state" style="margin-left: 45px;">Cancel</a>
+     </div>
+   </form>
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="#"> contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<script>
+function fileFunction2() {
+  var x = document.getElementById("none-2");
+  var y = document.getElementById("file-2");
+
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    y.style.display = "block";
+  }
+}
+</script>
+
+{% endblock %}
