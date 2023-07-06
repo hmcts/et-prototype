@@ -1,7 +1,13 @@
-const express = require('express')
-const router = express.Router()
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
 
-// Add your routes here - above the module.exports line
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
+
+// Add your routes here
+
 
 // router.post('/which-part', function (req, res) {
 //   req.session.data['working'] = 'yes';
@@ -291,4 +297,3 @@ router.post('/restrict-submitted-rule92', function (req, res) {
 
 
 
-module.exports = router
