@@ -23,104 +23,74 @@
 {% block content %}
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
+  <form action="submitted" method="post">
     <div class="govuk-grid-column-two-thirds">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
 
-    <h1 class="govuk-heading-l">View notice of hearing and hearing agenda</h1>
+    <h1 class="govuk-heading-l">Check your answers</h1>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Date sent
+          Application type
         </dt>
         <dd class="govuk-summary-list__value">
-         12 September 2023
+          Postpone my hearing
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Sent by
+          Give details of your application
         </dt>
         <dd class="govuk-summary-list__value">
-          Tribunal
+          {{ data['moreDetail'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> what</span>
+          </a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Additional information
+          Supporting material 
         </dt>
         <dd class="govuk-summary-list__value">
-          Please see attached hearing notice.
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> supporting</span>
+          </a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Description
+          Do you want to copy this correspondence to the other party to satisfy the Rules of Procedure?
         </dt>
         <dd class="govuk-summary-list__value">
-          Notice of Hearing and Hearing Agenda document
+          <p class="govuk-body">Yes</p>
         </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Document
-        </dt>
-        <dd class="govuk-summary-list__value">
-         <a href="#" class="govuk-link--no-visited-state"> Letter 4.8 Hearing Notice - hearing agenda.doc (DOC, 10MB)</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Hearing
-        </dt>
-        <dd class="govuk-summary-list__value">
-          1: Hearing - London - 12 November 2023
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Case management order or request?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Case management order
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Response
-        </dt>
-        <dd class="govuk-summary-list__value">
-         Yes - view document for details
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Party or parties to respond
-        </dt>
-        <dd class="govuk-summary-list__value">
-         Both parties
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="govuk-summary-list__value">
-         John Smith
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Sent to
-        </dt>
-        <dd class="govuk-summary-list__value">
-         Both parties
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> rule 92</span>
+          </a>
         </dd>
       </div>
     </dl>
 
-    <p class="govuk-body">Please refer to instructions or next steps given in the document you’ve received from the tribunal.
-      These may be requests, case management orders or directions.</a>
+
+    <button class="govuk-button" data-module="govuk-button">
+      Submit
+    </button>
+
+    <a class="govuk-link--no-visited-state" style="padding-left: 20px; text-align: center;" href="contact">Cancel</a>
+  </form>
     </div>
 
   <div class="govuk-grid-column-one-third">

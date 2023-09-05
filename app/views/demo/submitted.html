@@ -23,62 +23,25 @@
 {% block content %}
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+    <form action="dashboard" method="post">
+      <div class="govuk-grid-column-two-thirds">
+      <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
 
-    <h1 class="govuk-heading-l">Postpone a hearing</h1>
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          We have sent your application to the tribunal
+        </h1>
+      </div>
 
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Applicant
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Claimant
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Application date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          5 September 2023
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Application type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Apply to postpone my hearing
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          What do you want to tell or ask the tribunal?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">I'd like to request to postpone my hearing as I have a medical appointment on the same day.</p>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Supporting material
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body"><a href="#" class="govuk-link--no-visited-state">appointment.jpg</a></p>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Do you want to copy this correspondence to the other party to satisfy the Rules of Procedure?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Yes</p>
-        </dd>
-      </div>
-    </dl>
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">The tribunal will review your application and respond.</p>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Close and return to case overview
+      </button>
+    </form>
     </div>
+    
 
   <div class="govuk-grid-column-one-third">
     <details class="govuk-details" data-module="govuk-details">
