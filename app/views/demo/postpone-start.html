@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Demo – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,10 +23,61 @@
 {% block content %}
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
+    <form action="postpone-check" method="post">
     <div class="govuk-grid-column-two-thirds">
     <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+    
+    <span class="govuk-caption-l">Postpone a hearing</span>
+    <h1 class="govuk-heading-l">Apply to postpone my hearing</h1>
+    <p class="govuk-body">Use this form to ask the tribunal to postpone your hearing to a later date. </p>
+    <p class="govuk-body">Details to include in your application:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>which hearing you want to postpone. If the hearing you want to postpone is listed over multiple days, tell us which day or days you are applying to postpone</li>
+        <li>the reason you want to postpone. The tribunal will use this to decide whether to grant your application</li>
+        <li>any essential documents to support your application. For example, you may want to upload a medical note or correspondence from a witness who cannot attend </li>
+        <li> weekday dates within the next 3 months that you, your witnesses or representatives cannot attend a rescheduled hearing</li>
+        <li> the reason you cannot attend on those dates</li>
+      </ul>
+      <p class="govuk-body"><b>Upload letters, photos or documents if they are relevant to your application. Do not upload any other material.  </b></p>
+      <p class="govuk-body">Remember that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>if you are taking a picture of a letter, place it on a flat surface and take the picture from above </li>
+        <li>if you are uploading written documents with tracked changes, make sure that tracked changes are turned on </li>
+        <li>you can make more than one application at the same time by completing each form separately. If the applications are linked you can make that clear in the text box</li>
+      </ul>
 
-    <h1 class="govuk-heading-l">Postpone a hearing</h1>
+      <div class="govuk-form-group">
+        <div id="more-detail-hint" class="govuk-hint">
+          Give details of your application. Please state which respondent or respondents your application applies to. Use both the box and the file upload if you need to.
+        </div>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint"></textarea>
+      </div>
+
+      <div class="govuk-inset-text">
+        <div class="govuk-form-group">
+          <label class="govuk-heading-m" for="file-upload-1">
+            Upload a file
+          </label>
+          <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+        </div>
+      </div>
+
+      <h3 class="govuk-heading-m">Files uploaded</h3>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__row">
+            No files uploaded
+          </dd>
+        </div>
+
+      </dl>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+      <a class="govuk-link--no-visited-state govuk-!-margin-top-5" style="padding-left: 50px; margin-top: 100px;" href="contact">Cancel</a>
+    </form>
     </div>
 
   <div class="govuk-grid-column-one-third">
