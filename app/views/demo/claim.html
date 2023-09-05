@@ -1,0 +1,329 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your claim – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 400px; white-space: nowrap">
+      <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+
+    <h1 class="govuk-heading-l">Your claim details</h1>
+
+    <dl class="govuk-summary-list">
+        <h2 class="govuk-heading-m">Application details</h2>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Claim type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Discrimination
+          </dd>
+        </div>
+      </dl>
+
+      <dl class="govuk-summary-list">
+        <h2 class="govuk-heading-m">Your details</h2>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            09 September 1990
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sex
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Male
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Preferred title
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Mr
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact or home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              102 Petty France, London, SW1H 9AJ
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Telephone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not provided
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How would you like to be contacted?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Email
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Would you be able to take part in hearings by video and phone?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Do you have a physical, mental or learning disability or health condition that means you need support during your case?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No, I do not need any support at this time
+            </dd>
+          </div>
+      </dl>
+
+
+    <dl class="govuk-summary-list">
+        <h2 class="govuk-heading-m">Employment details</h2>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Did you work for the organisation or person you’re making your claim against?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Are you still working for the organisation or person you’re making your claim against?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Job title
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Administrator
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Employment start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+             01 January 2015
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Do you have a written contract with a notice period?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            What are your average weekly work hours? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              37
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Your pay BEFORE tax and National Insurance
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £30,000
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Your pay AFTER tax and National Insurance
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not provided
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Is this your weekly, monthly or annual pay?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Annual
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Did the respondent make any contributions to your pension?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Do or did you receive any employee benefits?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+          </div>
+      </dl>
+
+
+    <dl class="govuk-summary-list">
+        <h2 class="govuk-heading-m">Respondent 1 details</h2>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name of respondent
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Redde Ltd
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Respondent address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              102 Petty France, London, SW1H 9AJ
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Did you work at the respondent's address?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you have an Acas certificate number?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes - 123456789A
+            </dd>
+          </div>
+      </dl>
+
+      <dl class="govuk-summary-list">
+        <h2 class="govuk-heading-m">Claim details</h2>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What type of discrimination claim are you making?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Race
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Describe what happened to you
+            </dt>
+            <dd class="govuk-summary-list__value">
+              I was discriminated against on the base of my race.
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            What do you want if your claim is successful?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Compensation
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                What compensation are you seeking?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £100,000
+            </dd>
+          </div>
+      </dl>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Documents</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date uploaded</th>
+            <th scope="col" class="govuk-table__header">Document</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">22 September 2023</td>
+            <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="#">ET1 Support Document (PDF, 10MB)</td>
+          </tr>
+        </tbody>
+      </table>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="contact-the-tribunal"> contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}

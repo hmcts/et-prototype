@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <span class="govuk-phase-banner__text" style="padding-left: 400px; white-space: nowrap">
+      <a href="#" class="govuk-link--no-visited-state">Cymraeg</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <a href="#" class="govuk-back-link" style="margin-top: -10px" onclick="history.back(-1)">Back</a>
+
+    <h1 class="govuk-heading-l">Your hearings</h1>
+    <h2 class="govuk-heading-m">Your next hearing</h2>
+    <h3 class="govuk-heading-s">Hearing</h3>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Format
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Video (remote)
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Estimated length
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 days
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sit alone or full panel
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Judge sitting alone
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Tribunal dealing with case
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Leeds</p>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Day 1
+        </dt>
+        <dd class="govuk-summary-list__value">
+          London<br>
+          10am, 12 November 2023
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Day 2
+        </dt>
+        <dd class="govuk-summary-list__value">
+          London<br>
+          10am, 13 November 2023
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Day 3
+        </dt>
+        <dd class="govuk-summary-list__value">
+          London<br>
+          10am, 14 November 2023
+        </dd>
+      </div>
+    </dl>
+
+
+    <h3 class="govuk-heading-m">More hearing information</h3>
+    <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Request physical, mental or learning support</a><br>
+    <a class="govuk-link--no-visited-state" href="#">How to provide a bundle for your hearing</a></p>
+    
+    <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-7">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          12 September 2023
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Hearing<br>
+          <a class="govuk-link--no-visited-state" href="#">Hearing link information</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          12 September 2023
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Hearing<br>
+          <a class="govuk-link--no-visited-state" href="#">Acceptance of claim and notice of hearing</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          12 September 2023
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Hearing, case management orders<br>
+          <a class="govuk-link--no-visited-state" href="#">Notice of hearing and submit hearing agenda</a>
+        </dd>
+      </div>
+    </dl>
+  
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+        <br><br>
+        If you want to help processing case updates,<a class="govuk-link--no-visited-state" href="contact-the-tribunal"> contact the tribunal directly</a>.
+        <br><br>
+        <b>England & Wales</b>
+        Telephone: 0300 123 1024
+        Textphone: 18001 0300 123 1024
+        <br><br>
+        <b>Welsh language</b>
+        Telephone: 0300 303 5176
+        <br><br>
+        <b>Scotland</b>
+        Telephone: 0300 790 6234
+        Textphone: 18001 0300 790 6234
+        <br><br>
+        Monday to Thursday, 8.30am to 5pm.
+        Friday, 8.30am to 4pm.
+        The centre does not open on bank holidays.
+        Find out about call charges (opens in new tab)
+      </div>
+    </details>
+  </div>
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+    </div>
+</main>
+{% endblock %}
